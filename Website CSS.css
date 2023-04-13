@@ -1,0 +1,147 @@
+body {
+    background-color: #B4D7D9;
+    font-family: Arial;
+}
+
+header {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Lucida Handwriting";
+}
+
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    /*flex-basis: 100px;*/
+}
+
+nav {
+    display: flex;
+    background-color: #333333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+nav a {
+    width: 105px;
+    height: 30px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+    color: white;
+    text-decoration: none;
+    font-size:15px;
+}
+
+nav a:hover {
+    justify-content: center;
+    align-items: center;
+    color: #333333;
+    background-color: white;
+    /*box-shadow: inset 150px 0 0 0 whitesmoke;*/
+    font-size: 18px;
+}
+
+nav a.homeBtn {
+    font-size: 18px;
+}
+
+.content {
+    background-color: #005e91;
+    color: white;
+    margin: auto;
+    width: 800px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+/*Home Page CSS*/
+
+img{
+    display: flex;
+    height: 150px;
+    width: 150px;
+    align-items: left;
+    margin: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+}
+img a{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Sign in && Sign up && Contact us*/
+
+form {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+input, textarea {
+    width: 500px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#loginBtn, #signUp, #submit {
+    justify-content: center;
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 0px 0;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+}
+
+.item{
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    color: white;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#itemInfo {
+    position: absolute;
+    right: 69%;
+    top: 30%
+}
+
+#myOrders{
+    width: 100%;
+}
+
+#myOrders td, #myOrders th {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+#myOrders th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: darkblue;
+    color: white;
+}
+
