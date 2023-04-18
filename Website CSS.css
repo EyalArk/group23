@@ -12,6 +12,7 @@ header {
 }
 
 .flex-container{
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     /*flex-basis: 100px;*/
@@ -49,7 +50,7 @@ nav a:hover {
     color: #333333;
     background-color: white;
     /*box-shadow: inset 150px 0 0 0 whitesmoke;*/
-    font-size: 18px;
+    /*font-size: 18px;*/
 }
 
 nav a.homeBtn {
@@ -81,7 +82,13 @@ img a{
     display: flex;
     flex-wrap: wrap;
 }
-
+img:hover{
+    animation: pulse 1.5s ease-in infinite;
+}
+@keyframes pulse{
+    25%  {transform: scale(0.9);}
+    75%  {transform: scale(1.1);}
+}
 /*Sign in && Sign up && Contact us*/
 
 form {
@@ -100,15 +107,31 @@ input, textarea {
 }
 
 #loginBtn, #signUp, #submit {
-    justify-content: center;
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-    margin: 0px 0;
-    border: none;
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
     cursor: pointer;
-    width: 100px;
+    outline: none;
+    color: #fff;
+    background-color: #04AA6D;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
 }
+
+/*#loginBtn, #signUp, #submit:hover {*/
+/*    background-color: #3e8e41*/
+/*}*/
+#signUp:hover {
+    background-color: #3e8e41
+}
+
+#loginBtn, #signUp, #submit:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
 
 .item{
     width: 100px;
@@ -145,3 +168,31 @@ input, textarea {
     color: white;
 }
 
+/*about us css*/
+/*p {*/
+/*    animation-duration: 3s;*/
+/*    animation-name: slidein;*/
+/*}*/
+
+/*p {*/
+/*    animation-duration: 3s;*/
+/*    animation-name: slidein;*/
+/*}*/
+
+/*@keyframes slidein {*/
+/*    from {*/
+/*        margin-left: 100%;*/
+/*        width: 300%;*/
+/*    }*/
+
+/*    75% {*/
+/*        font-size: 300%;*/
+/*        margin-left: 25%;*/
+/*        width: 150%;*/
+/*    }*/
+
+/*    to {*/
+/*        margin-left: 0%;*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
