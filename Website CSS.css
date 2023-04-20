@@ -39,7 +39,7 @@ nav a {
     justify-content: center;
     align-items: center;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    color: white;
+    color: turquoise;
     text-decoration: none;
     font-size:15px;
 }
@@ -57,6 +57,27 @@ nav a.homeBtn {
     font-size: 18px;
 }
 
+
+
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    min-width: 100px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
 .content {
     background-color: #005e91;
     color: white;
@@ -66,18 +87,62 @@ nav a.homeBtn {
     border-radius: 10px;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #005e91;
+    color: #fff;
+    text-align: left;
+}
+
+footer a {
+    color: #fff;
+    margin-right: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
 /*Home Page CSS*/
 
 img{
     display: flex;
     height: 150px;
     width: 150px;
-    align-items: left;
+    /*align-items: left;*/
     margin: 10px;
     padding: 10px;
     justify-content: center;
     align-items: center;
 }
+.Nike {
+    position: absolute; /* or "relative" */
+    top: 100px;
+    left: 500px;
+    width: 400px;
+    height: 200px;
+}
+
+.Adidas{
+    position: absolute; /* or "relative" */
+    top: 300px;
+    left: 500px;
+    width: 400px;
+    height: 200px;
+}
+.Jordan{
+    position: absolute; /* or "relative" */
+    top: 300px;
+    left: 200px;
+    width: 300px;
+    height: 200px;
+}
+
 img a{
     display: flex;
     flex-wrap: wrap;
