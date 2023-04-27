@@ -4,7 +4,8 @@
   "color1" : "Blue",
   "color2": "White",
   "img": "no",
-  "price": "149.99"
+  "price": "149.99",
+  "brand": "nike"
 },
 {
 "productID": "2",
@@ -12,23 +13,29 @@
 "color1" : "Blue",
 "color2": "White",
 "image": "no",
-"price": "149.99"
+"price": "149.99",
+"brand": "nike"
+
 },
   {
   "productID": "3",
   "name": "New Balance",
   "color1" : "Blue",
   "color2": "White",
-  "image": "items/3.jpg",
-  "price": "149.99"
+  "image": "../items/3.jpg",
+  "price": "149.99",
+    "brand": "New Balance"
 
-},
+
+  },
   {
     "productID": "4",
     "name": "Jordan 1 Turbo Green",
     "color1" : "Blue",
     "color2": "White",
-    "image": "items/Pro1.jpeg",
-    "price": "149.99"
+    "image": "../items/Pro1.jpeg",
+    "price": "149.99",
+    "brand": "nike"
+
   }
 ]

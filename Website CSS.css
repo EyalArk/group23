@@ -5,7 +5,7 @@ body {
 
 header {
     padding-top: 60px;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     text-align: center;
     font-size: 30px;
     font-family: "Lucida Handwriting";
@@ -16,11 +16,18 @@ header {
     display: flex;
     flex-wrap: wrap;
     /*flex-basis: 100px;*/
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.flex-container > img {
+    justify-content: left;
 }
 
 nav {
     display: flex;
-    background-color: #333333;
+    background-color: black;
     position: fixed;
     top: 0;
     left: 0;
@@ -31,7 +38,7 @@ nav {
     margin-bottom: 50px;
 }
 
-nav a {
+nav a, footer a, footer {
     width: 105px;
     height: 30px;
     margin: 0px;
@@ -39,26 +46,25 @@ nav a {
     justify-content: center;
     align-items: center;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-    color: turquoise;
+    color: whitesmoke;
     text-decoration: none;
-    font-size:15px;
+    font-size:18px;
 }
 
-nav a:hover {
+nav a:hover, footer a:hover{
     justify-content: center;
     align-items: center;
     color: #333333;
     background-color: white;
+   font-weight: bold;
+    font-size: 19px;
     /*box-shadow: inset 150px 0 0 0 whitesmoke;*/
     /*font-size: 18px;*/
 }
 
-nav a.homeBtn {
-    font-size: 18px;
-}
-
-
-
+/*nav a.homeBtn {*/
+/*    font-size: 22px;*/
+/*}*/
 
 .dropdown {
     position: relative;
@@ -68,15 +74,13 @@ nav a.homeBtn {
     display: none;
     position: absolute;
     z-index: 1;
-    background-color: #f9f9f9;
+    background-color: black;
     min-width: 100px;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-
 
 .content {
     background-color: #005e91;
@@ -88,12 +92,15 @@ nav a.homeBtn {
 }
 
 footer {
+    justify-content: center;
+    align-items: center;
+    display: flex;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     padding: 10px;
-    background-color: #005e91;
+    background-color: black;
     color: #fff;
     text-align: left;
 }
@@ -110,7 +117,7 @@ footer p {
 
 /*Home Page CSS*/
 
-img{
+#logo{
     display: flex;
     height: 150px;
     width: 150px;
@@ -120,6 +127,7 @@ img{
     justify-content: center;
     align-items: center;
 }
+
 .Nike {
     position: absolute; /* or "relative" */
     top: 100px;
@@ -143,17 +151,27 @@ img{
     height: 200px;
 }
 
-img a{
+
+#logo a{
     display: flex;
     flex-wrap: wrap;
 }
-img:hover{
+
+#logo:hover{
     animation: pulse 1.5s ease-in infinite;
 }
 @keyframes pulse{
     25%  {transform: scale(0.9);}
     75%  {transform: scale(1.1);}
 }
+
+#search {
+    width: 150px;
+    height: 10px;
+    float: right;
+}
+
+
 /*Sign in && Sign up && Contact us*/
 
 form {
@@ -263,4 +281,3 @@ input, textarea {
 /*}*/
 
 /*Products CSS*/
-
