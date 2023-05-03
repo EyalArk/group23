@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="Sign%20In.js"></script>
     <link rel ="stylesheet" href ="Website%20CSS.css">
 </head>
 <body>
@@ -13,9 +14,11 @@
         <a href="../myOrders/MyOrder.html">My Orders</a>
         <a href="../Sign%20In.html">Sign In</a>
         <a href="../Sign%20Up.html">Sign Up</a>
-        <a href="../aboutUs/About%20Us.html">About Us</a>
-        <a href="../contactUs/contactUs.html">Contact Us</a>
 
+
+        <form>
+            <input id="search" type="text" placeholder="Search.." name="search">
+        </form>
     </nav>
 
     <header>
@@ -24,12 +27,13 @@
 
     <div class="flex-container">
         <div class="content">
-            <form>
+            <form action="" method="" id="login">
                 <label for="accountEmail">Email</label>
                 <input type="email" placeholder="Enter your email" id="accountEmail" required>
                 <label for="psw">Password</label>
                 <input type="password" placeholder="Enter Password" id="psw" required>
                 <button type="submit" id="loginBtn">Login</button>
+
             </form>
         </div>
     </div>
