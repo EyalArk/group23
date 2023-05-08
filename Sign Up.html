@@ -6,17 +6,25 @@
     <script src="./Sign%20Up.js"></script>
 
     <link rel ="stylesheet" href ="Website%20CSS.css">
+
 </head>
 <body>
 
 <nav>
-    <a class="homeBtn" href="../home/homePage.html">Home</a>
-    <a href="../Items/Item.html">Item</a>
-    <a href="../myOrders/MyOrder.html">My Orders</a>
-    <a href="../Sign%20In.html">Sign In</a>
-    <a href="../Sign%20Up.html">Sign Up</a>
-    <a href="../aboutUs/About%20Us.html">About Us</a>
-    <a href="../contactUs/contactUs.html">Contact Us</a>
+    <a class="homeBtn" href="home/homePage.html">Home</a>
+    <div class="dropdown">
+        <a href="items/products.html">Products</a>
+        <div class="dropdown-content">
+            <a href="#">Nike</a>
+            <a href="#">Adidas</a>
+            <a href="#">Puma</a>
+        </div>
+    </div>
+
+
+    <a href="myOrders/MyOrder.html">My Orders</a>
+    <a href="Sign%20In.html">Sign In</a>
+    <a href="Sign%20Up.html">Sign Up</a>
 
     <form>
         <input id="search" type="text" placeholder="Search.." name="search">
@@ -32,11 +40,10 @@
         <input type="email" id="accountEmail" required name="email" class="input_signUp" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" id="psw" required class="input_signUp" required minlength="7" name="password" >>
+        <input type="password" id="psw" required class="input_signUp" required minlength="7" name="password" >
 
         <label for="name"><b>Name</b></label>
         <input type="text" id="name" required class="input_signUp" >
-
 
         <label for="phone"><b>Phone</b></label>
         <input type= "text" id="phone" required class="input_signUp" >
