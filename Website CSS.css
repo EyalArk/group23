@@ -62,6 +62,16 @@ nav a:hover, footer a:hover{
     /*font-size: 18px;*/
 }
 
+#loggedInUserEmail {
+    position: absolute;
+    top: 50%;
+    transform: translateY(50%);
+    margin-left: auto;
+    color: #cccccc;
+    left: 0;
+    top: 0;
+}
+
 /*nav a.homeBtn {*/
 /*    font-size: 22px;*/
 /*}*/
@@ -202,6 +212,44 @@ input, textarea {
     border-radius: 15px;
     box-shadow: 0 9px #999;
 }
+
+
+#signUpLink {
+    display: inline-block;
+    margin-left: 5px;
+    color: #0000EE;
+    text-decoration: none;
+}
+
+#newUserLabel {
+    color: #808080;
+    margin-right: 5px;
+}
+
+#signUpContainer {
+    display: flex;
+    align-items: center;
+}
+#signUpLink:visited {
+    color: #ffffff;
+}
+
+#signUpLink:hover {
+    text-decoration: underline;
+}
+
+#newUserLabel {
+    color: #cccccc;
+    margin-right: 5px;
+}
+
+#signUpContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 /*#loginBtn, #signUp, #submit:hover {*/
 /*    background-color: #3e8e41*/

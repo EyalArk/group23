@@ -1,12 +1,17 @@
-function person (first,last,DOB){
-    this.first = first;
-    this.last = last;
-    this.DOB = DOB;
+
+    document.addEventListener("DOMContentLoaded", function() {
+    // Check if a user is logged in
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (loggedInUser) {
+    // Display the email of the logged in user in the navigation bar
+    const loggedInUserEmail = document.getElementById("loggedInUserEmail");
+    loggedInUserEmail.textContent = "Welcome, " + loggedInUser;
+    console.log(loggedInUserEmail)
 }
 
-const person1 = new person('eyal','levi', '1.1.1995' )
+});
 
-console.log(person1)
 
 
 document.addEventListener("DOMContentLoaded", function() {

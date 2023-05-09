@@ -27,6 +27,13 @@
     <a href="../Sign%20In.html">Sign In</a>
     <a href="../Sign%20Up.html">Sign Up</a>
 
+    <div id="loggedInUserContainer">
+        <div id="loggedInUserEmail"></div>
+        <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
+    </div>
+
+
+
     <form>
         <input id="search" type="text" placeholder="Search.." name="search" >
     </form>
@@ -63,18 +70,28 @@
 </div>
 
 
-
-
-
-
-
-
-
 <footer>
     <a href="../aboutUs/About%20Us.html">About Us</a>
     <a href="../contactUs/contactUs.html">Contact Us</a>
     <p> &copy; "EA" Sneakers Website All rights reserved</p>
 </footer>
+
+
+<!--<script>-->
+<!--    document.addEventListener("DOMContentLoaded", function() {-->
+<!--        // Check if a user is logged in-->
+<!--        const loggedInUser = localStorage.getItem("loggedInUser");-->
+
+<!--        if (loggedInUser) {-->
+<!--            // Display the email of the logged-in user in the navigation bar-->
+<!--            const loggedInUserEmail = document.getElementById("loggedInUserEmail");-->
+<!--            loggedInUserEmail.textContent = "Welcome, " + loggedInUser;-->
+<!--            console.log(loggedInUserEmail)-->
+<!--        }-->
+
+<!--    });-->
+
+<!--</script>-->
 
 </body>
 </html>

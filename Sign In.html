@@ -3,57 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="Sign%20In.js"></script>
     <link rel ="stylesheet" href ="Website%20CSS.css">
+
 </head>
 <body>
 
-    <nav>
-        <a class="homeBtn" href="home/homePage.html">Home</a>
-        <div class="dropdown">
-            <a href="items/products.html">Products</a>
-            <div class="dropdown-content">
-                <a href="#">Nike</a>
-                <a href="#">Adidas</a>
-                <a href="#">Puma</a>
+<header>
+    Login
+</header>
+
+<div class="flex-container">
+    <div class="content">
+        <form action="" method="" id="login">
+            <label for="accountEmail">Email</label>
+            <input type="email" placeholder="Enter your email" id="accountEmail" required>
+            <label for="psw">Password</label>
+            <input type="password" placeholder="Enter Password" id="psw" required>
+            <button type="submit" id="loginBtn">Login</button>
+            <br>
+            <div id="signUpContainer">
+                <label id="newUserLabel" for="EA23 Sneakers">New User?</label>
+                <a href="Sign%20Up.html" id="signUpLink">Sign up</a>
             </div>
-        </div>
-
-
-
-
-
-        <a href="myOrders/MyOrder.html">My Orders</a>
-        <a href="Sign%20In.html">Sign In</a>
-        <a href="Sign%20Up.html">Sign Up</a>
-
-        <form>
-            <input id="search" type="text" placeholder="Search.." name="search">
         </form>
-    </nav>
-
-    <header>
-        Login
-    </header>
-
-    <div class="flex-container">
-        <div class="content">
-            <form action="" method="" id="login">
-                <label for="accountEmail">Email</label>
-                <input type="email" placeholder="Enter your email" id="accountEmail" required>
-                <label for="psw">Password</label>
-                <input type="password" placeholder="Enter Password" id="psw" required>
-                <button type="submit" id="loginBtn">Login</button>
-
-            </form>
-        </div>
     </div>
+</div>
 
-    <footer>
-        <a href="../aboutUs/About%20Us.html">About Us</a>
-        <a href="../contactUs/contactUs.html">Contact Us</a>
-        <p> &copy; "EA" Sneakers Website All rights reserved</p>
-    </footer>
+<script src="users.json"></script>
+<script src="Sign%20In.js"></script>
 
 </body>
 </html>
+
