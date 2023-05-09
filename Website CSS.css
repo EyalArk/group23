@@ -72,9 +72,6 @@ nav a:hover, footer a:hover{
     top: 0;
 }
 
-/*nav a.homeBtn {*/
-/*    font-size: 22px;*/
-/*}*/
 
 .dropdown {
     position: relative;
@@ -180,6 +177,17 @@ footer p {
     width: 150px;
     height: 10px;
     float: right;
+}
+
+table {
+    font-family: "Lucida Handwriting";
+    font-size: 24px;
+}
+
+table img {
+    display: flex;
+    width: 360px;
+    height: 220px;
 }
 
 
@@ -319,49 +327,17 @@ input, textarea {
 #logo3:hover{
     animation: pulse 1.5s ease-in infinite;
 }
-/*about us css*/
-/*p {*/
-/*    animation-duration: 3s;*/
-/*    animation-name: slidein;*/
-/*}*/
 
-/*p {*/
-/*    animation-duration: 3s;*/
-/*    animation-name: slidein;*/
-/*}*/
-
-/*@keyframes slidein {*/
-/*    from {*/
-/*        margin-left: 100%;*/
-/*        width: 300%;*/
-/*    }*/
-
-/*    75% {*/
-/*        font-size: 300%;*/
-/*        margin-left: 25%;*/
-/*        width: 150%;*/
-/*    }*/
-
-/*    to {*/
-/*        margin-left: 0%;*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
-
-/*Products CSS*/
-
-
-/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+/*About Us*/
 
 .flip-card {
     background-color: transparent;
     width: 300px;
     height: 200px;
     border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
 }
 
-/* This container is needed to position the front and back side */
 .flip-card-inner {
     display: flex;
     position: relative;
@@ -372,12 +348,11 @@ input, textarea {
     transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
+
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
 .flip-cards-container {
     display: flex;
     justify-content: center;
@@ -388,12 +363,10 @@ input, textarea {
     width: 300px;
     height: 200px;
     border: 1px solid transparent;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
     margin: 0 80px;
-
 }
 
-/* This container is needed to position the front and back side */
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -403,12 +376,11 @@ input, textarea {
     transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
+
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
 .flip-card-front, .flip-card-back {
     position: absolute;
     width: 100%;
@@ -417,26 +389,24 @@ input, textarea {
     backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
 .flip-card-front {
     background-color: #bbb;
     color: black;
 }
 
-/* Style the back side */
 .flip-card-back {
     background-color: transparent;
     color: white;
     transform: rotateY(180deg);
 }
 
-
+/*Clock*/
 #sun, #moon {
     display: flex;
     visibility: visible;
 }
 
-
+/*Slide Show*/
 
 .slideshow-container {
     max-width: 700px;
@@ -462,3 +432,4 @@ input, textarea {
         opacity: 1;
     }
 }
+
