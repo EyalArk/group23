@@ -1,0 +1,21 @@
+[
+  {
+    "email": "amit@gmail.com",
+    "password": "12345678",
+    "name" : "Amit",
+    "phone" : "0521234123",
+    "address": "Tel Aviv"
+
+
+  },
+  {
+    "email": "eyal@gmail.com",
+    "password": "12345678",
+    "name" : "Eyal",
+    "phone" : "0521111111",
+    "adDress": "Beer Sheva"
+
+  }
+]
+
+
