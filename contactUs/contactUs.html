@@ -10,19 +10,25 @@
     Contact Us
 </header>
 
-    <nav>
-        <a class="homeBtn" href="../home/homePage.html">Home</a>
+<nav>
+    <a class="homeBtn" href="../home/homePage.html">Home</a>
+    <div class="dropdown">
         <a href="../items/products.html">Products</a>
-        <a href="../myOrders/MyOrder.html">My Orders</a>
-        <a href="../Sign%20In.html">Sign In</a>
-        <a href="../Sign%20Up.html">Sign Up</a>
-        <a href="../aboutUs/About%20Us.html">About Us</a>
-        <a href="../contactUs/contactUs.html">Contact Us</a>
-
-        <form>
-            <input id="search" type="text" placeholder="Search.." name="search">
-        </form>
-    </nav>
+        <div class="dropdown-content">
+            <a href="#">Nike</a>
+            <a href="#">Yeezy</a>
+            <a href="#">NB</a>
+        </div>
+    </div>
+    <a href="../myOrders/MyOrder.html">My Orders</a>
+    <div id="loggedInUserContainer">
+        <div id="loggedInUserEmail"></div>
+        <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
+    </div>
+    <form>
+        <input id="search" type="text" placeholder="Search.." name="search" >
+    </form>
+</nav>
 
     <div class="content">
         <form id="contact" action="mailto:eyalark@post.bgu.ac.il" enctype="text/plain" method="GET" target="_blank">
