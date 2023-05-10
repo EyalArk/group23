@@ -75,6 +75,7 @@
                 const accountEmail = document.getElementById("accountEmail").value;
                 const password = document.getElementById("psw").value;
                 const name = document.getElementById("name").value;
+                 localStorage.setItem("loggedInName", name);
 
                 if (userExists(accountEmail)) {
                     alert("This User already exists! Please sign in!");
@@ -85,6 +86,8 @@
                         password: password,
                         name: name
                     };
+
+
 
                     // Add the new user to the users array
                     users.push(newUser);

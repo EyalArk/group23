@@ -22,10 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
         const accountEmail = document.getElementById("accountEmail").value;
         const password = document.getElementById("psw").value;
 
+
         if (userExists(accountEmail)) {
             if (authenticateUser(accountEmail, password)) {
                 // Redirect to home page on successful login
                 localStorage.setItem("loggedInUser", accountEmail);
+
                 window.location.href = "home/homePage.html";
             } else {
                 alert("Invalid password! Please try again.");
