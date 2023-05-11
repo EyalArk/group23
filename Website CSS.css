@@ -7,7 +7,7 @@ header {
     padding-top: 60px;
     padding-bottom: 40px;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-family: "Lucida Handwriting";
 }
 
@@ -17,7 +17,7 @@ header {
     flex-wrap: wrap;
     /*flex-basis: 100px;*/
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 30px;
 }
 
@@ -426,7 +426,7 @@ input, textarea {
     margin: auto;
 }
 
-.mySlides {
+.mySlides{
     display: none;
 }
 
@@ -444,7 +444,3 @@ input, textarea {
         opacity: 1;
     }
 }
-
-/*#productDetails{*/
-/*    */
-/*}*/
