@@ -1,6 +1,6 @@
 
 [{
-  "productID": "1",
+  "ID": "1",
   "name": "Air Jordan 1 Stealth",
   "fit": "High",
   "color1" : "grey",
@@ -11,7 +11,7 @@
   "brand": "Nike"
 },
 {
-"productID": "2",
+"ID": "2",
   "name": "Air Jordan 1 Taxi",
   "fit": "High",
   "color1" : "Yellow",
@@ -23,7 +23,7 @@
 },
 
   {
-    "productID": "3",
+    "ID": "3",
     "name": "Air Jordan 1 Bordeaux",
     "fit": "High",
     "color1" : "Dark Red",
@@ -35,7 +35,7 @@
   },
 
   {
-    "productID": "4",
+    "ID": "4",
     "name": "Air Jordan 1 Electro Orange",
     "fit": "High",
     "color1" : "Orange",
@@ -47,7 +47,7 @@
   },
 
   {
-    "productID": "5",
+    "ID": "5",
     "name": "Air Jordan 1 Mocha",
     "fit": "Low",
     "color1" : "Brown",
@@ -59,7 +59,7 @@
   },
 
   {
-    "productID": "6",
+    "ID": "6",
     "name": "Air Jordan 4 Seafoam",
     "fit": "High",
     "color1" : "Blue",
@@ -71,7 +71,7 @@
   },
 
   {
-    "productID": "7",
+    "ID": "7",
     "name": "Air Jordan 4 SE Craft",
     "fit": "High",
     "color1" : "Grey",
@@ -82,7 +82,7 @@
     "brand": "Nike"
   },
   {
-    "productID": "8",
+    "ID": "8",
     "name": "Dunk Panda",
     "fit": "Low",
     "color1" : "Black",
@@ -93,7 +93,7 @@
     "brand": "Nike"
   },
   {
-    "productID": "9",
+    "ID": "9",
     "name": "Dunk Purple",
     "fit": "High",
     "color1" : "Purple",
@@ -104,7 +104,7 @@
     "brand": "Nike"
   },
   {
-    "productID": "10",
+    "ID": "10",
     "name": "Dunk Harvest Moon",
     "fit": "High",
     "color1" : "Orange",
@@ -115,7 +115,7 @@
     "brand": "Nike"
   },
   {
-    "productID": "11",
+    "ID": "11",
     "name": "New Balance Protection Pack",
     "fit": "Low",
     "color1" : "Grey",
@@ -126,7 +126,7 @@
     "brand": "New Balance"
   },
   {
-    "productID": "12",
+    "ID": "12",
     "name": "New Balance 550",
     "fit": "Low",
     "color1" : "Grey",
@@ -137,7 +137,7 @@
     "brand": "New Balance"
   },
   {
-    "productID": "13",
+    "ID": "13",
     "name": "Yeezy Foam RNNR Stone Stage",
     "fit": "Low",
     "color1" : "Cream",
@@ -148,7 +148,7 @@
     "brand": "Yeezy"
   },
   {
-    "productID": "14",
+    "ID": "14",
     "name": "Yeezy Slide Orche",
     "fit": "Low",
     "color1" : "Brown",
@@ -159,7 +159,7 @@
     "brand": "Yeezy"
   },
   {
-    "productID": "15",
+    "ID": "15",
     "name": "Yeezy Slide Pure",
     "fit": "Low",
     "color1" : "Cream",

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="products.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name = "description" content="This is my website">
+    <title>Title</title>
+    <link rel ="stylesheet" href ="../Website%20CSS.css">
+
+</head>
+<body>
+
+<nav>
+    <a class="homeBtn" href="../home/homePage.html">Home</a>
+    <div class="dropdown">
+        <a href="../items/products.html">Products</a>
+        <div class="dropdown-content">
+            <a href="#">Nike</a>
+            <a href="#">Yeezy</a>
+            <a href="#">NB</a>
+        </div>
+    </div>
+    <a href="../myOrders/MyOrder.html">My Orders</a>
+    <div id="loggedInUserContainer">
+        <div id="loggedInUserName"></div>
+        <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
+    </div>
+    <form>
+        <input id="search" type="text" placeholder="Search.." name="search" >
+    </form>
+</nav>
+
+<header>
+    <label> More details</label>
+</header>
+
+
+<div class="flex-container">
+    <div class="content">
+        <h2 id="productName"></h2>
+        <p>
+            <label>Product ID: <span id="productID"></span></label><br>
+            <label>Brand: <span id="brand"></span></label><br>
+            <label>Fit: <span id="fit"></span></label><br>
+            <label>Color1: <span id="color1"></span></label><br>
+            <label>Color2: <span id="color2"></span></label><br>
+            <label>Price: <span id="price"></span></label>
+        </p>
+        <img id="image1" src="" alt="Image 1" height="350" width="500px">
+        <img id="image2" src="" alt="Image 2" height="350" width="500px">
+
+    </div>
+</div>
+
+<footer>
+    <a href="../aboutUs/About%20Us.html">About Us</a>
+    <a href="../contactUs/contactUs.html">Contact Us</a>
+    <p> &copy; "EA" Sneakers Website All rights reserved</p>
+</footer>
+
+
+
+</body>
+</html>
