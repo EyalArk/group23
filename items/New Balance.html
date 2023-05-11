@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nike Shoes</title>
+    <link rel="stylesheet" href="../Website%20CSS.css">
+</head>
+<body>
+<nav>
+    <a class="homeBtn" href="../home/homePage.html">Home</a>
+    <div class="dropdown">
+        <a href="../items/products.html">Products</a>
+        <div class="dropdown-content">
+            <a href="../items/products.html">Nike</a>
+            <a href="../items/Yeezy.html">Yeezy</a>
+            <a href="../items/New%20Balance.html"">NB</a>
+        </div>
+    </div>
+    <a href="../myOrders/MyOrder.html">My Orders</a>
+    <div id="loggedInUserContainer">
+        <div id="loggedInUserEmail"></div>
+        <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
+    </div>
+</nav>
+<br>
+<br>
+
+<header>
+    <h1>New Balance Shoes</h1>
+</header>
+
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+        </thead>
+        <tbody id="data-output">
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <a href="../aboutUs/About%20Us.html">About Us</a>
+    <a href="../contactUs/contactUs.html">Contact Us</a>
+    <p>&copy; "EA" Sneakers Website All rights reserved</p>
+</footer>
+
+<script src="NewBalance.js"></script>
+<script>
+    // fetch("products.json")
+    //     .then(function (response) {
+    //         return response.json();
+    //     })
+    //     .then(function (products) {
+    //         let placeholder = document.querySelector("#data-output");
+    //         let out = "";
+    //         for (let product of products) {
+    //             if (product.brand.toLowerCase() === "new balance") {
+    //                 out += `
+    //       <tr class="product">
+    //         <td>${product.name}</td>
+    //         <td>${product.price}</td>
+    //         <td>
+    //           <img src="${product.image}"
+    //                data-hover="${product.image2}"
+    //                onmouseover="this.src='${product.image2}'"
+    //                onmouseout="this.src='${product.image}'">
+    //         </td>
+    //       </tr>
+    //     `;
+    //             }
+    //         }
+    //         placeholder.innerHTML = out;
+    //     });
+
+
+    fetch("products.json")
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (products) {
+            let placeholder = document.querySelector("#data-output");
+            let out = "";
+            for (let product of products) {
+                let productName = product.name.toLowerCase();
+                if (productName.includes("jordan") || productName.includes("new")) {
+                    out += `
+          <tr class="product">
+            <td>${product.name}</td>
+            <td>${product.price}</td>
+            <td>
+              <img src="${product.image}"
+                   data-hover="${product.image2}"
+                   onmouseover="this.src='${product.image2}'"
+                   onmouseout="this.src='${product.image}'">
+            </td>
+          </tr>
+        `;
+                }
+            }
+            placeholder.innerHTML = out;
+        });
+</script>
+</body>
+</html>

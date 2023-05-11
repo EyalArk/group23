@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtered Shoes</title>
+    <link rel="stylesheet" href="../Website%20CSS.css">
+</head>
+<body>
+<nav>
+    <a class="homeBtn" href="../home/homePage.html">Home</a>
+    <div class="dropdown">
+        <a href="../items/products.html">Products</a>
+        <div class="dropdown-content">
+            <a href="search.html?search=nike">Nike</a>
+            <a href="#">Yeezy</a>
+            <a href="#">NB</a>
+        </div>
+    </div>
+    <a href="../myOrders/MyOrder.html">My Orders</a>
+    <div id="loggedInUserContainer">
+        <div id="loggedInUserEmail"></div>
+        <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
+    </div>
+    <form id="searchForm">
+        <input id="search" type="text" placeholder="Search.." name="search">
+        <button type="submit">Search</button>
+    </form>
+</nav>
+<br>
+<br>
+
+<header>
+    <h1>Filtered Shoes</h1>
+</header>
+
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+        </thead>
+        <tbody id="data-output">
+        </tbody>
+    </table>
+</div>
+
+<footer>
+    <a href="../aboutUs/About%20Us.html">About Us</a>
+    <a href="../contactUs/contactUs.html">Contact Us</a>
+    <p>&copy; "EA" Sneakers Website All rights reserved</p>
+</footer>
+
+<script src="Search.js"></script>
+
+</body>
+</html>
