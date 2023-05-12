@@ -11,6 +11,7 @@ header {
     font-family: "Lucida Handwriting";
 }
 
+
 .flex-container{
     overflow: hidden;
     display: flex;
@@ -24,6 +25,32 @@ header {
 .flex-container > img {
     justify-content: left;
 }
+
+#head {
+    margin-top: 70px;
+    font-size: 100px;
+    text-align: center;
+    color: #fcedd8;
+    background: transparent;
+    font-family: 'Niconne', cursive;
+    font-weight: 700;
+    text-shadow: 5px 5px 0px #eb452b, 10px 10px 0px #efa032, 15px 15px 0px #46b59b, 20px 20px 0px #017e7f, 25px 25px 0px #052939, 30px 30px 0px #c11a2b, 35px 35px 0px #c11a2b, 40px 40px 0px #c11a2b, 35px 35px 0px #c11a2b;
+}
+
+#head p {
+    text-align: center;
+    font-family: "Helvetica";
+    font-size:  100px;
+}
+
+#head a {
+    color: transparent;
+    text-decoration: none;
+    font-family: 'Niconne', cursive;
+    font-size:  120px;
+}
+
+
 
 nav {
     display: flex;
@@ -130,7 +157,7 @@ footer p {
     height: 250px;
     width: 250px;
     /*align-items: left;*/
-    margin: 10px;
+    margin: 50px;
     padding: 10px;
     justify-content: center;
     align-items: center;
@@ -413,7 +440,7 @@ input, textarea {
 
 /*Clock*/
 #clockImg {
-    margin-top: 40px;
+    margin-top: 50px;
     display: flex;
     visibility: visible;
 }
@@ -444,3 +471,4 @@ input, textarea {
         opacity: 1;
     }
 }
+

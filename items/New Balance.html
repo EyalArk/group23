@@ -13,7 +13,7 @@
         <div class="dropdown-content">
             <a href="../items/products.html">Nike</a>
             <a href="../items/Yeezy.html">Yeezy</a>
-            <a href="../items/New%20Balance.html"">NB</a>
+            <a href="../items/New%20Balance.html">NB</a>
         </div>
     </div>
     <a href="../myOrders/MyOrder.html">My Orders</a>
@@ -87,7 +87,7 @@
             let out = "";
             for (let product of products) {
                 let productName = product.name.toLowerCase();
-                if (productName.includes("jordan") || productName.includes("new")) {
+                if (product.brand.toLowerCase() === "new balance") {
                     out += `
           <tr class="product">
             <td>${product.name}</td>
