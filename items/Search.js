@@ -1,25 +1,27 @@
-document.getElementById("searchForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent form submission
 
-    const searchInput = document.getElementById("search").value.toLowerCase();
-    console.log("Search input:", searchInput);
+function search() {
+    document.getElementById("searchForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
 
-    // Use the searchInput variable for further processing
+        const searchInput = document.getElementById("search").value.toLowerCase();
+        console.log("Search input:", searchInput);
 
-    console.log("aaa")
-    fetch("products.json")
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (products) {
-            let placeholder = document.querySelector("#data-output");
-            let out = "";
-            for (let product of products) {
+        // Use the searchInput variable for further processing
 
-                const productName = product.name.toLowerCase(); //new
+        console.log("aaa")
+        fetch("products.json")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (products) {
+                let placeholder = document.querySelector("#data-output");
+                let out = "";
+                for (let product of products) {
 
-                if (productName.includes(searchInput)){
-                    out += `
+                    const productName = product.name.toLowerCase(); //new
+
+                    if (productName.includes(searchInput)){
+                        out += `
           <tr class="product">
             <td>${product.name}</td>
             <td>${product.price}</td>
@@ -31,11 +33,12 @@ document.getElementById("searchForm").addEventListener("submit", function(event)
             </td>
           </tr>
         `;
+                    }
                 }
-            }
-            placeholder.innerHTML = out;
-        });
+                placeholder.innerHTML = out;
+            });
 
-});
+    });
+}
 
-
+search();

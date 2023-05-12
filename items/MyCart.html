@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Filtered Shoes</title>
+  <title>My Cart</title>
   <link rel="stylesheet" href="../Website%20CSS.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
     <div id="loggedInUserEmail"></div>
     <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
   </div>
-  <form id="searchForm">
+  <form >
     <input id="search" type="text" placeholder="Search.." name="search">
     <!--        <button type="submit">Search</button>-->
   </form>
@@ -30,22 +30,30 @@
 <br>
 
 <header>
-  <h1>Filtered Shoes</h1>
+  <h1>My Cart</h1>
+  <h2 >
+    <div id="summary-section">
+      <p id="total-price"></p>
+      <button id="clear-all-btn">Clear All</button>
+      <button id="buy-now-btn">Buy Now!</button>
+
+    </div>
+  </h2>
 </header>
 
-<div class="table-container">
-  <table>
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Image</th>
-    </tr>
-    </thead>
-    <tbody id="data-output">
-    </tbody>
-  </table>
-</div>
+<table>
+  <thead>
+  <tr>
+    <th>Product Name</th>
+    <th>Price</th>
+    <th>Image</th>
+    <!-- Add more columns if needed -->
+  </tr>
+  </thead>
+  <tbody id="cart-items">
+  <!-- Display the cart items dynamically -->
+  </tbody>
+</table>
 
 <footer>
   <a href="../aboutUs/About%20Us.html">About Us</a>
@@ -55,10 +63,13 @@
 
 <script src="Search.js"></script>
 <script src="myOrders.js"></script>
-<script src="./homePage.js"></script>
+<script src="MyCart.js"></script>
+<script src="products.js"></script>
+
 
 
 
 
 </body>
 </html>
+

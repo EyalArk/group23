@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Nike Shoes</title>
+  <script src="Search.js"></script>
   <link rel="stylesheet" href="../Website%20CSS.css">
 </head>
 <body>
@@ -16,11 +17,15 @@
       <a href="../items/New%20Balance.html">NB</a>
     </div>
   </div>
+  <a href="../items/MyCart.html">My Cart</a>
   <a href="../myOrders/MyOrder.html">My Orders</a>
   <div id="loggedInUserContainer">
     <div id="loggedInUserEmail"></div>
     <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
   </div>
+  <form id="searchForm">
+    <input id="search" type="text" placeholder="Search.." name="search">
+  </form>
 </nav>
 <br>
 <br>
@@ -89,6 +94,8 @@
   function viewDetails(productID) {
     window.location.href = `../items/Details.html?productID=${productID}`;
   }
+
+  search();
 
 </script>
 </body>
