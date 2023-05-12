@@ -156,7 +156,6 @@ footer p {
     display: flex;
     height: 250px;
     width: 250px;
-    /*align-items: left;*/
     margin: 50px;
     padding: 10px;
     justify-content: center;
@@ -165,7 +164,7 @@ footer p {
 
 
 .Nike {
-    position: absolute; /* or "relative" */
+    position: absolute;
     top: 100px;
     left: 500px;
     width: 400px;
@@ -437,6 +436,34 @@ input, textarea {
     color: white;
     transform: rotateY(180deg);
 }
+
+/*Details*/
+#productName {
+    text-align: center;
+    font-family: "Lucida Handwriting";
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+#images {
+    display: flex;
+    flex-direction: row;
+}
+
+#images img {
+    margin-bottom: 50px; /* Adjust this value as needed */
+    width: 410px;
+    height: 250px;
+}
+
+#details {
+    text-align: center;
+    font-size: 23px;
+}
+
 
 /*Clock*/
 #clockImg {

@@ -38,18 +38,20 @@
 
 <div class="flex-container">
     <div class="content">
-        <h2 id="productName"></h2>
-        <p>
-            <label>Product ID: <span id="productID"></span></label><br>
-            <label>Brand: <span id="brand"></span></label><br>
-            <label>Fit: <span id="fit"></span></label><br>
-            <label>Color1: <span id="color1"></span></label><br>
-            <label>Color2: <span id="color2"></span></label><br>
-            <label>Price: <span id="price"></span></label>
-        </p>
-        <img id="image1" src="" alt="Image 1" height="350" width="500px">
-        <img id="image2" src="" alt="Image 2" height="350" width="500px">
-
+        <div class="flex-column">
+            <h2 id="productName"></h2>
+            <div id="images">
+                <img id="image1" src="" alt="Image 1" height="350" width="500px">
+                <img id="image2" src="" alt="Image 2" height="350" width="500px">
+            </div>
+            <p id="details">
+                <label>Product ID: <span id="productID"></span></label><br>
+                <label>Brand: <span id="brand"></span></label><br>
+                <label>Fit: <span id="fit"></span></label><br>
+                <label>Colors: <span id="colors"></span></label><br>
+                <label>Price: <span id="price"></span></label>
+            </p>
+        </div>
     </div>
 </div>
 
