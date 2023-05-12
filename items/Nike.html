@@ -11,7 +11,7 @@
   <div class="dropdown">
     <a href="../items/products.html">Products</a>
     <div class="dropdown-content">
-      <a href="../items/products.html">Nike</a>
+      <a href="../items/Nike.html">Nike</a>
       <a href="../items/Yeezy.html">Yeezy</a>
       <a href="../items/New%20Balance.html">NB</a>
     </div>
@@ -70,6 +70,15 @@
                    onmouseover="this.src='${product.image2}'"
                    onmouseout="this.src='${product.image}'">
             </td>
+
+ <td>
+            <button onclick="viewDetails('${product.ID}')">View Details</button>
+          </td>
+          <td>
+            <button onclick="addToCart(${product.ID})">Add To Cart</button>
+          </td>
+
+
           </tr>
         `;
               }
@@ -77,6 +86,9 @@
             placeholder.innerHTML = out;
           });
 
+  function viewDetails(productID) {
+    window.location.href = `../items/Details.html?productID=${productID}`;
+  }
 
 </script>
 </body>
