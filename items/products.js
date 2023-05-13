@@ -57,13 +57,11 @@ function displayProductData(product) {
     document.getElementById("productID").textContent = product.ID; // Updated ID here
     document.getElementById("brand").textContent = product.brand;
     document.getElementById("fit").textContent = product.fit;
-    document.getElementById("color1").textContent = product.color1;
-    document.getElementById("color2").textContent = product.color2;
+    document.getElementById("colors").textContent = `${product.color1}, ${product.color2}`;
     document.getElementById("price").textContent = product.price;
     document.getElementById("image1").src = product.image;
     document.getElementById("image2").src = product.image2;
 }
-
 
 // Define an empty array to store the cart items
 let cartItems = [];

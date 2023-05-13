@@ -153,7 +153,7 @@ footer p {
 /*Home Page CSS*/
 
 #logo{
-    display: flex;
+    /*display: flex;*/
     height: 250px;
     width: 250px;
     margin: 50px;
@@ -454,7 +454,7 @@ input, textarea {
 }
 
 #images img {
-    margin-bottom: 50px; /* Adjust this value as needed */
+    margin-bottom: 50px;
     width: 410px;
     height: 250px;
 }
@@ -464,24 +464,29 @@ input, textarea {
     font-size: 23px;
 }
 
-
 /*Clock*/
 #clockImg {
-    margin-top: 50px;
-    display: flex;
+    justify-content: right;
+    /*margin-top: 5px;*/
+    /*display: flex;*/
     visibility: visible;
 }
 
 /*Slide Show*/
 
 .slideshow-container {
-    max-width: 700px;
+
     position: relative;
     margin: auto;
 }
 
 .mySlides{
+    margin: 50px;
+    padding: 10px;
+    /*margin-top: 80px;*/
     display: none;
+    width: 250px;
+    hight: 250px;
 }
 
 /* Fading animation */
