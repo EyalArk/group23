@@ -1,5 +1,4 @@
 
-
 document.addEventListener("DOMContentLoaded", function() {
     // Function to check if a user exists in the user list
     function userExists(email) {

@@ -1,14 +1,5 @@
-
+function  navUserName (){
     document.addEventListener("DOMContentLoaded", function() {
-    // Check if a user is logged in
-   // const loggedInUser = localStorage.getItem("loggedInUser");
-
-
-    //     if (loggedInUser) {
-    // // Display the email of the logged in user in the navigation bar
-    // const loggedInUserEmail = document.getElementById("loggedInUserEmail");
-    // loggedInUserEmail.textContent = "Welcome, " + loggedInUser;
-    // console.log(loggedInUserEmail)
 
         const loggedInUser = localStorage.getItem("loggedInName");
 
@@ -16,9 +7,12 @@
             const loggedInUserName = document.getElementById("loggedInUserName");
             loggedInUserName.textContent = "Welcome, " + loggedInUser;
             console.log(loggedInUserName)
+        }
+
+    });
 }
 
-});
+navUserName();
 
     document.addEventListener("DOMContentLoaded", function() {
         showSlides1();

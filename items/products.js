@@ -1,3 +1,7 @@
+import ("../homePage")
+navUserName();
+
+
 let dataProducts;
 
 fetch("products.json")
