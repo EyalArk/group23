@@ -1,20 +1,6 @@
-function  navUserName (){
-    document.addEventListener("DOMContentLoaded", function() {
 
-        const loggedInUser = localStorage.getItem("loggedInName");
 
-        if (loggedInUser) {
-            const loggedInUserName = document.getElementById("loggedInUserName");
-            loggedInUserName.textContent = "Welcome, " + loggedInUser;
-            console.log(loggedInUserName)
-        }
-
-    });
-}
-
-navUserName();
-
-    document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() {
         showSlides1();
         showSlides2();
         hidePhoto();

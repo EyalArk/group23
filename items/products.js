@@ -1,5 +1,3 @@
-import ("../homePage")
-navUserName();
 
 
 let dataProducts;
@@ -119,4 +117,4 @@ function addToCart(productID) {
     }
 }
 
-// search.search();
+

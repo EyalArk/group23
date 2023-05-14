@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--  <script src="../search2/Search2.js"></script>-->
-<!--  <script src="myOrders.js"></script>-->
-  <script src="MyCart.js"></script>
-  <script src="../items/products.js"></script>
-  <script src ="../script.js"></script>
   <meta charset="UTF-8">
-  <title>My Cart</title>
+  <title>Filtered Shoes</title>
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
@@ -23,41 +18,34 @@
   </div>
   <a href="../myOrders/MyOrder.html">My Orders</a>
   <div id="loggedInUserContainer">
-    <div id="loggedInUserName"></div>
+    <div id="loggedInUserEmail"></div>
     <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
   </div>
-  <form >
+  <form id="searchForm">
     <input id="search" type="text" placeholder="Search.." name="search">
-    <!--        <button type="submit">Search</button>-->
+    <!--            <button type="submit">Search</button>-->
   </form>
 </nav>
 <br>
 <br>
 
-<header>My Cart</header>
+<header>
+  <h1>Filtered Shoes</h1>
+</header>
 
-<div class="summary-section">
-  <p id="total-price"></p></br>
+<div class="table-container">
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Image</th>
+    </tr>
+    </thead>
+    <tbody id="data-output">
+    </tbody>
+  </table>
 </div>
-
-<div class="summary-section">
-  <button id="clear-all-btn">Clear All</button>
-  <button id="buy-now-btn">Buy Now!</button>
-</div>
-
-<table class="table-container">
-  <thead>
-  <tr>
-<!--    <th>Product Name</th>-->
-<!--    <th>Price</th>-->
-<!--    <th>Image</th>-->
-    <!-- Add more columns if needed -->
-  </tr>
-  </thead>
-  <tbody id="cart-items">
-  <!-- Display the cart items dynamically -->
-  </tbody>
-</table>
 
 <footer>
   <a href="../aboutUs/aboutUs.html">About Us</a>
@@ -65,12 +53,11 @@
   <p>&copy; "EA" Sneakers Website All rights reserved</p>
 </footer>
 
-
-
-
-
-
+<script src="Search2.js"></script>
+<!--<script src ="../items/products.js"></script>-->
+<!--<script src="../items/products.json"></script>-->
+<!--<script src="myOrders.js"></script>-->
+<!--<script src="./homePage.js"></script>-->
 
 </body>
 </html>
-
