@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel ="stylesheet" href ="../Website%20CSS.css">
+    <link rel ="stylesheet" href ="../style.css">
     <script src="products.js"></script>
 
 </head>
@@ -13,12 +13,12 @@
     <div class="dropdown">
         <a href="../items/products.html">Products</a>
         <div class="dropdown-content">
-            <a href="../items/Nike.html">Nike</a>
-            <a href="../items/Yeezy.html">Yeezy</a>
-            <a href="../items/New%20Balance.html">NB</a>
+            <a href="../items/products.html" onclick="filterByBrand('Nike')">Nike</a>
+            <a href="../items/products.html" onclick="filterByBrand('Yeezy')">Yeezy</a>
+            <a href="../items/products.html" onclick="filterByBrand('Nee Balance')">NB</a>
         </div>
     </div>
-    <a href="../items/MyCart.html">My Cart</a>
+    <a href="../myCart/MyCart.html">My Cart</a>
 
     <a href="../myOrders/MyOrder.html">My Orders</a>
     <div id="loggedInUserContainer">
@@ -32,12 +32,14 @@
 <br>
 <br>
 
-<header>
-        Products
-    </div>
+<header>Products</header>
 
-</header>
-
+<div id="filtersButtons">
+    <button class="btnFilter" onclick="filterByBrand('all')"> Show all</button>
+    <button class="btnFilter" onclick="filterByBrand('Nike')">Nike</button>
+    <button class="btnFilter" onclick="filterByBrand('New Balance')">New Balance</button>
+    <button class="btnFilter" onclick="filterByBrand('Yeezy')"> Yeezy</button>
+</div>
 
 <div class="table-container">
 <table>
@@ -52,7 +54,7 @@
 </div>
 
 <footer>
-    <a href="../aboutUs/About%20Us.html">About Us</a>
+    <a href="../aboutUs/aboutUs.html">About Us</a>
     <a href="../contactUs/contactUs.html">Contact Us</a>
     <p> &copy; "EA" Sneakers Website All rights reserved</p>
 </footer>

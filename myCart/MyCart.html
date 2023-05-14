@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>My Cart</title>
-  <link rel="stylesheet" href="../Website%20CSS.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <nav>
@@ -29,19 +29,18 @@
 <br>
 <br>
 
-<header>
-  <h1>My Cart</h1>
-  <h2 >
-    <div id="summary-section">
-      <p id="total-price"></p>
-      <button id="clear-all-btn">Clear All</button>
-      <button id="buy-now-btn">Buy Now!</button>
+<header>My Cart</header>
 
-    </div>
-  </h2>
-</header>
+<div class="summary-section">
+  <p id="total-price"></p></br>
+</div>
 
-<table>
+<div class="summary-section">
+  <button id="clear-all-btn">Clear All</button>
+  <button id="buy-now-btn">Buy Now!</button>
+</div>
+
+<table class="table-container">
   <thead>
   <tr>
 <!--    <th>Product Name</th>-->
@@ -56,15 +55,15 @@
 </table>
 
 <footer>
-  <a href="../aboutUs/About%20Us.html">About Us</a>
+  <a href="../aboutUs/aboutUs.html">About Us</a>
   <a href="../contactUs/contactUs.html">Contact Us</a>
   <p>&copy; "EA" Sneakers Website All rights reserved</p>
 </footer>
 
-<script src="Search.js"></script>
+<script src="../search/Search.js"></script>
 <script src="myOrders.js"></script>
 <script src="MyCart.js"></script>
-<script src="products.js"></script>
+<script src="../items/products.js"></script>
 
 
 

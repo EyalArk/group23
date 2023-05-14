@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Redirect to home page on successful login
                 localStorage.setItem("loggedInUser", accountEmail);
 
-                window.location.href = "home/homePage.html";
+                window.location.href = "../home/homePage.html";
             } else {
                 alert("Invalid password! Please try again.");
             }

@@ -13,7 +13,6 @@
         const loggedInUser = localStorage.getItem("loggedInName");
 
         if (loggedInUser) {
-            // Display the email of the logged in user in the navigation bar
             const loggedInUserName = document.getElementById("loggedInUserName");
             loggedInUserName.textContent = "Welcome, " + loggedInUser;
             console.log(loggedInUserName)

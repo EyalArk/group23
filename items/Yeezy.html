@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Yeezy Shoes</title>
-  <script src="Search.js"></script>
-  <link rel="stylesheet" href="../Website%20CSS.css">
+  <script src="../search/Search.js"></script>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <nav>
@@ -17,7 +17,7 @@
       <a href="../items/New%20Balance.html">NB</a>
     </div>
   </div>
-  <a href="../items/MyCart.html">My Cart</a>
+  <a href="../myCart/MyCart.html">My Cart</a>
   <a href="../myOrders/MyOrder.html">My Orders</a>
   <div id="loggedInUserContainer">
     <div id="loggedInUserEmail"></div>
@@ -49,7 +49,7 @@
 </div>
 
 <footer>
-  <a href="../aboutUs/About%20Us.html">About Us</a>
+  <a href="../aboutUs/aboutUs.html">About Us</a>
   <a href="../contactUs/contactUs.html">Contact Us</a>
   <p>&copy; "EA23 Sneakers" All rights reserved</p>
 </footer>
@@ -91,7 +91,7 @@
           });
 
   function viewDetails(productID) {
-    window.location.href = `../items/Details.html?productID=${productID}`;
+    window.location.href = `../items/details.html?productID=${productID}`;
   }
 
   search();
