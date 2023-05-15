@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", function() {
         showSlides1();
         showSlides2();
@@ -25,18 +23,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 
-    function hidePhoto() {
-        let date = new Date();
-        let hour = date.getHours();
-        let sun = document.querySelector("#sun") ?? document.createElement('img');
-        let moon = document.querySelector("#moon") ?? document.createElement('img');
+function hidePhoto() {      /* display picture by the time of the day (sun/moon) */
+    let date = new Date();
+    let hour = date.getHours();
+    let sun = document.querySelector("#sun") ?? document.createElement('img');
+    let moon = document.querySelector("#moon") ?? document.createElement('img');
 
-        if (hour > 19 && hour < 6) {
-            clockImg.src = "../pics/clockPics/moon.png"
-        }
-        else {
-            clockImg.src = "../pics/clockPics/sun.png"
-        }
+    if (hour > 19 && hour < 6) {
+        clockImg.src = "../pics/clockPics/moon.png"
     }
+    else {
+        clockImg.src = "../pics/clockPics/sun.png"
+    }
+}
 
-    hidePhoto();
+hidePhoto();

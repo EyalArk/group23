@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="products.js"></script>
-    <script src = "../script.js"></script>
-    <script src="Search2.js"></script>
+    <script defer src="products.js"></script>
+    <script defer src = "../script.js"></script>
+    <script defer src="Search2.js"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel ="stylesheet" href ="../style.css">
 
-
 </head>
 <body>
+
 <nav>
     <a class="homeBtn" href="../home/homePage.html">Home</a>
-    <div class="dropdown">
-        <a href="../items/products.html">Products</a>
-        <div class="dropdown-content">
-            <a href="../items/products.html" onclick="filterByBrand('Nike')">Nike</a>
-            <a href="../items/products.html" onclick="filterByBrand('Yeezy')">Yeezy</a>
-            <a href="../items/products.html" onclick="filterByBrand('Nee Balance')">NB</a>
-        </div>
-    </div>
+    <a href="../items/products.html">Products</a>
     <a href="../myCart/MyCart.html">My Cart</a>
-
     <a href="../myOrders/MyOrder.html">My Orders</a>
     <div id="loggedInUserContainer">
         <div id="loggedInUserName"></div>
-        <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
+        <a href="../users/Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
     </div>
-    <form id="searchForm9">
+    <form id="searchForm">
         <input id="search" type="text" placeholder="Search.." name="search" >
     </form>
 </nav>

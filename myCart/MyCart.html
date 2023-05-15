@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!--  <script src="../search2/Search2.js"></script>-->
-<!--  <script src="myOrders.js"></script>-->
-  <script src="MyCart.js"></script>
-  <script src="../items/products.js"></script>
-  <script src ="../script.js"></script>
+  <script defer src="MyCart.js"></script>
+  <script defer src="../items/products.js"></script>
+  <script defer src ="../script.js"></script>
   <meta charset="UTF-8">
   <title>My Cart</title>
   <link rel="stylesheet" href="../style.css">
@@ -13,23 +11,13 @@
 <body>
 <nav>
   <a class="homeBtn" href="../home/homePage.html">Home</a>
-  <div class="dropdown">
-    <a href="../items/products.html">Products</a>
-    <div class="dropdown-content">
-      <a href="../items/Nike.html">Nike</a>
-      <a href="../items/Yeezy.html">Yeezy</a>
-      <a href="../items/New%20Balance.html">NB</a>
-    </div>
-  </div>
+  <a href="../items/products.html">Products</a>
+  <a href="../myCart/MyCart.html">My Cart</a>
   <a href="../myOrders/MyOrder.html">My Orders</a>
   <div id="loggedInUserContainer">
     <div id="loggedInUserName"></div>
-    <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
+    <a href="../users/Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
   </div>
-  <form >
-    <input id="search" type="text" placeholder="Search.." name="search">
-    <!--        <button type="submit">Search</button>-->
-  </form>
 </nav>
 <br>
 <br>
@@ -42,20 +30,19 @@
 
 <div class="summary-section">
   <button id="clear-all-btn">Clear All</button>
-  <button id="buy-now-btn">Buy Now!</button>
+  <button id="buy-now-btn"  >Buy Now!</button>
 </div>
 
 <table class="table-container">
   <thead>
   <tr>
-<!--    <th>Product Name</th>-->
-<!--    <th>Price</th>-->
-<!--    <th>Image</th>-->
-    <!-- Add more columns if needed -->
+<!-- Product Name-->
+<!-- Price-->
+<!-- Image-->
   </tr>
   </thead>
   <tbody id="cart-items">
-  <!-- Display the cart items dynamically -->
+<!--  show the cart items-->
   </tbody>
 </table>
 
@@ -64,11 +51,6 @@
   <a href="../contactUs/contactUs.html">Contact Us</a>
   <p>&copy; "EA" Sneakers Website All rights reserved</p>
 </footer>
-
-
-
-
-
 
 
 </body>

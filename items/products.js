@@ -2,7 +2,7 @@
 
 let dataProducts;
 
-fetch("products.json")
+fetch("products.json")    /* connect to the products json page*/
     .then(function (response) {
         return response.json();
     })
@@ -13,7 +13,7 @@ fetch("products.json")
         addingProductsToTable(products);
     });
 
-function fetchProductToDisplay(products) {
+function fetchProductToDisplay(products) {              /* display the products */
     const productID = getProductIDFromQueryParam();
     const product = dataProducts.find(product => product.ID === productID);
     if (product) {
@@ -21,7 +21,7 @@ function fetchProductToDisplay(products) {
     }
 }
 
-function addingProductsToTable(prods) {
+function addingProductsToTable(prods) {      /*put the products in the table */
     let placeholder = document.querySelector("#data-output");
     let out = "";
     for (let product of prods) {
@@ -36,7 +36,7 @@ function addingProductsToTable(prods) {
                  onmouseout="this.src='${product.image}'">
           </td>
           <td>
-            <button class="btnDetails" onclick="viewDetails('${product.ID}')">View Details</button>
+            <button class="btnDetails" onclick="viewDetails('${product.ID}')">View Details</button> 
           </td>
           <td>
             <button class="btnDetails" onclick="addToCart(${product.ID})">Add To Cart</button>
@@ -51,32 +51,19 @@ function viewDetails(productID) {
     window.location.href = `../items/details.html?productID=${productID}`;
 }
 
-// fetch("products.json")
-//     .then(function (response) {
-//         return response.json();
-//     })
-//     .then(function (products) {
-//         const productID = getProductIDFromQueryParam();
-//         const product = products.find(product => product.ID === productID);
-//         if (product) {
-//             displayProductData(product);
-//         }
-//     });
 
-function getProductIDFromQueryParam() {
+function getProductIDFromQueryParam() {          /* help function */
     const params = new URLSearchParams(window.location.search);
     const productID = params.get("productID");
     return productID;
 }
 
-function filterByBrand(brand) {
+function filterByBrand(brand) {          /*show the products in the page by the user choose */
     let placeholder = document.querySelector("#data-output");
     placeholder.innerHTML = '';
     if (brand === 'all') {
-        console.log(`check2`);
         addingProductsToTable(dataProducts);
     } else {
-        console.log(`check1`);
         let productToDisplay = dataProducts.filter(product => product.brand === brand);
         console.log(productToDisplay);
         addingProductsToTable(productToDisplay);
@@ -94,21 +81,18 @@ function displayProductData(product) {
     document.getElementById("image2").src = product.image2;
 }
 
-function addToCart(productID) {
+function addToCart(productID) {      /* function to add the chosen products to cart  */
     productID = productID.toString();
     let product = dataProducts.find(item => item.ID === productID);
-
     if (product) {
         let cartItems = localStorage.getItem("cartItems");
         console.log("Existing cart items:", cartItems);
-
         if (cartItems) {
             cartItems = JSON.parse(cartItems);
         } else {
             console.log("Cart items not found");
             cartItems = [];
         }
-
         cartItems.push(product);
         localStorage.setItem("cartItems", JSON.stringify(cartItems));
         alert("Product added to cart!");
@@ -116,5 +100,3 @@ function addToCart(productID) {
         console.log("Product not found");
     }
 }
-
-

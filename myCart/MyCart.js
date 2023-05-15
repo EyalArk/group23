@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const cartItemsTableBody = document.getElementById("cart-items");
         const totalPriceElement = document.getElementById("total-price");
 
-        function removeFromCart(index) {
+
+        function removeFromCart(index) {  /* remove from cart option*/
             cartItems.splice(index, 1);
             localStorage.setItem("cartItems", JSON.stringify(cartItems));
         }
 
-        function calculateTotalPrice() {
+        function calculateTotalPrice() {  /* summarize the total price of the cart*/
             let totalPrice = 0;
             for (let i = 0; i < cartItems.length; i++) {
                 const product = cartItems[i];
@@ -19,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             totalPriceElement.textContent = "Total Price: $" + totalPrice.toFixed(2);
         }
 
-        function clearCart() {
+        function clearCart() { /* remove all the products in the cart*/
             cartItems.length = 0;
             localStorage.removeItem("cartItems");
             cartItemsTableBody.innerHTML = "";
@@ -61,31 +62,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         calculateTotalPrice();
+
     }
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    const buyNowButton = document.getElementById("buy-now-btn");
+document.addEventListener("DOMContentLoaded", function() { /*message after press buy now*/
+    const buyNowBtn = document.getElementById("buy-now-btn");
+    buyNowBtn.addEventListener("click", function() {
+        alert("Thank you for your purchase!");   //  alert message
 
-    buyNowButton.addEventListener("click", function () {
-        fetch("/send-email", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                email: "amitf9@gmail.com",
-            }),
-        })
-            .then((response) => response.text())
-            .then((data) => {
-                console.log(data);
-                alert("Email sent successfully!");
-            })
-            .catch((error) => {
-                console.log(error);
-                alert("Error sending email");
-            });
     });
 });
+

@@ -99,23 +99,6 @@ nav a:hover, footer a:hover{
     top: 0;
 }
 
-
-.dropdown {
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-    background-color: black;
-    min-width: 100px;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 .content {
     background-color: #005e91;
     color: white;
@@ -227,6 +210,50 @@ table img {
     height: 220px;
 }
 
+.centered-text {
+    position: relative;
+    text-align: center;
+}
+
+/*The best selling shoe image and frame*/
+
+.centered-text {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.frame {
+    display: inline-block;
+    border: 5px solid black;
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+
+}
+
+
+.frame img {
+    max-width: 100%;
+    height: 100%;
+}
+
+.overlay-text {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
 
 /*Sign in && Sign up && Contact us*/
 
@@ -297,8 +324,7 @@ input, textarea {
 
 
 /*#loginBtn, #signUp, #submit:hover {*/
-/*    background-color: #3e8e41*/
-/*}*/
+
 #signUp:hover {
     background-color: #3e8e41
 }
@@ -438,6 +464,7 @@ input, textarea {
 }
 
 /*Products && myCart*/
+
 #filtersButtons, .summary-section {
     display: flex;
     justify-content: center;
@@ -448,7 +475,7 @@ input, textarea {
     font-size: 30px;
 }
 
-.btnFilter, .btnDetails, .remove-btn, #clear-all-btn, #buy-now-btn {
+.btnFilter, .btnDetails, .remove-btn, #clear-all-btn, #buy-now-btn, #BackClick {
     background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
     border: 0;
     border-radius: 6px;
@@ -487,6 +514,7 @@ input, textarea {
 }
 
 /*Details*/
+
 #productName {
     text-align: center;
     font-family: "Lucida Handwriting";
@@ -510,10 +538,11 @@ input, textarea {
 
 #details {
     text-align: center;
-    font-size: 23px;
+    font-size: 20px;
 }
 
 /*Clock*/
+
 #clockImg {
     justify-content: right;
     /*margin-top: 5px;*/

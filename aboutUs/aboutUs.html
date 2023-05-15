@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script defer src="../script.js"  ></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel ="stylesheet" href ="../style.css">
@@ -8,22 +9,14 @@
 <body>
 <nav>
     <a class="homeBtn" href="../home/homePage.html">Home</a>
-    <div class="dropdown">
-        <a href="../items/products.html">Products</a>
-        <div class="dropdown-content">
-            <a href="#">Nike</a>
-            <a href="#">Yeezy</a>
-            <a href="#">NB</a>
-        </div>
-    </div>
+    <a href="../items/products.html">Products</a>
+    <a href="../myCart/MyCart.html">My Cart</a>
     <a href="../myOrders/MyOrder.html">My Orders</a>
     <div id="loggedInUserContainer">
-        <div id="loggedInUserEmail"></div>
-        <a href="../Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
+        <div id="loggedInUserName"></div>
+        <a href="../users/Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
     </div>
-    <form>
-        <input id="search" type="text" placeholder="Search.." name="search" >
-    </form>
+
 </nav>
     <br><br>
 

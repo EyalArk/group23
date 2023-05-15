@@ -28,7 +28,7 @@ fetch("users.json")
             localStorage.setItem("loggedInName", name);
 
             if (userExists(accountEmail)) {
-                alert("This User already exists! Please sign in!");
+                alert("This User already exists! Please Sign In or Try Again!");
             } else {
                 // Create a new user object
                 const newUser = {
