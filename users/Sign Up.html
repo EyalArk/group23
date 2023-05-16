@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="./Sign%20Up.js"></script>
+    <script defer src="./Sign%20Up.js"></script>
+    <script defer src="users.json"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel ="stylesheet" href ="../style.css">
     <link rel="stylesheet" href="login.css">
-
 </head>
 <body>
 
@@ -23,30 +23,25 @@
         <label for="psw"><b>Password</b></label>
         <input type="password" id="psw" required class="input_signUp" required minlength="7" name="password" >
 
+        <label for="confirmPsw"><b>Confirm Password</b></label>
+        <input type="password" id="confirmPsw" required class="input_signUp" required minlength="7">
+
+
         <label for="name"><b>Name</b></label>
         <input type="text" id="name" required class="input_signUp" >
 
         <label for="phone"><b>Phone</b></label>
         <input type= "text" id="phone" required class="input_signUp" >
 
-<!--        <label for="address"><b>Address</b></label>-->
-<!--        <input type="text" id="address"  required class="input_signUp" pattern="[a-zA-Z0-9]" >-->
 
         <button type="submit" id="signUp">Sign Up</button>
 
         <div id="signInContainer">
             <br>
-
             <a id = "BackClick" href="../users/Sign%20In.html"  style="background-color:#3e8e41">Back To Sign In</a>
-
         </div>
-
     </form>
 </div>
-
-
-<script src="users.json"></script>
-
 
 </body>
 </html>

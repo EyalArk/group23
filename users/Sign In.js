@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return users.some(user => user.email === email);
     }
 
-    // Function to authenticate user
+    //Check if the user is already sign up in the site
     function authenticateUser(email, password) {
         const users = JSON.parse(localStorage.getItem("users")) || [];
         const user = users.find(user => user.email === email && user.password === password);
@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const accountEmail = document.getElementById("accountEmail").value;
         const password = document.getElementById("psw").value;
-
 
         if (userExists(accountEmail)) {
             if (authenticateUser(accountEmail, password)) {

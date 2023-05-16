@@ -1,3 +1,4 @@
+//function for showing the name of the user in the nav
 function  navUserName (){
     document.addEventListener("DOMContentLoaded", function() {
 
@@ -8,11 +9,8 @@ function  navUserName (){
             loggedInUserName.textContent = "Welcome, " + loggedInUser;
             console.log(loggedInUserName)
         }
-
     });
 }
-
-
 
 navUserName();
 
