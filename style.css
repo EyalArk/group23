@@ -50,8 +50,6 @@ header {
     font-size:  120px;
 }
 
-
-
 nav {
     display: flex;
     background-color: black;
@@ -83,13 +81,24 @@ nav a:hover, footer a:hover{
     align-items: center;
     color: #333333;
     background-color: white;
-   font-weight: bold;
+    font-weight: bold;
     font-size: 19px;
     /*box-shadow: inset 150px 0 0 0 whitesmoke;*/
     /*font-size: 18px;*/
 }
 
+nav img {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    margin-right: auto;
+    color: #cccccc;
+    right: 0;
+    top: 0;
+}
+
 #loggedInUserName {
+    display: flex;
     position: absolute;
     top: 50%;
     transform: translateY(50%);
@@ -183,11 +192,11 @@ footer p {
     75%  {transform: scale(1.1);}
 }
 
-#search {
-    width: 150px;
-    height: 10px;
-    float: right;
-}
+/*#search {*/
+/*    width: 150px;*/
+/*    height: 10px;*/
+/*    float: right;*/
+/*}*/
 
 .table-container{
     justify-content: center;
@@ -372,19 +381,13 @@ input, textarea {
 }
 
 #logo3{
-    display: flex;
+    /*display: flex;*/
     height: 150px;
     width: 150px;
-    /*align-items: left;*/
     margin: 5px;
     padding: 5px;
     justify-content: center;
     align-items: center;
-}
-
-#logo3 a{
-    display: flex;
-    flex-wrap: wrap;
 }
 
 #logo3:hover{
@@ -552,16 +555,10 @@ input, textarea {
 
 /*Slide Show*/
 
-.slideshow-container {
-
-    position: relative;
-    margin: auto;
-}
-
 .mySlides{
     margin: 50px;
     padding: 10px;
-    /*margin-top: 80px;*/
+    margin-top: 80px;
     display: none;
     width: 250px;
     hight: 250px;

@@ -1,4 +1,3 @@
-search2();
 function search2() {
     document.getElementById("searchForm").addEventListener("submit", function(event) {
         event.preventDefault(); // Prevent form submission
@@ -10,8 +9,6 @@ function search2() {
 
         fetch("products.json") /* connect to the products json page*/
             .then(function (response) {
-                console.log("check4")
-
                 return response.json();
             })
             .then(function (products) {
@@ -21,7 +18,7 @@ function search2() {
                     const productName = product.name.toLowerCase(); //new
                     if (productName.includes(searchInput)){
                         out += `
-          <tr class="product">   /* Disaplay the product*/
+                <tr class="product">  
             <td>${product.name}</td>
             <td>${product.price}</td>
             <td>
