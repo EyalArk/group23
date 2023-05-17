@@ -14,8 +14,8 @@
 <nav>
     <a class="homeBtn" href="../home/homePage.html">Home</a>
     <a href="../items/products.html">Products</a>
-    <a href="../myCart/MyCart.html">My Cart</a>
-    <a href="../myOrders/MyOrder.html">My Orders</a>
+    <a href="../myCart/myCart.html">My Cart</a>
+    <a href="../myOrders/myOrder.html">My Orders</a>
     <div id="loggedInUserContainer">
         <div id="loggedInUserName"></div>
         <a href="../users/Sign%20In.html" id="logoutLink" style="color: red">Logout</a>
@@ -44,7 +44,7 @@
                 <br>
                 <br>
                 <br>
-                <a id = "BackClick" style="">Back</a>
+                <a id = "BackClick" onclick="history.back()">Back</a>
             </p>
         </div>
     </div>
@@ -59,20 +59,6 @@
     <a href="../contactUs/contactUs.html">Contact Us</a>
     <p> &copy; "EA" Sneakers Website All rights reserved</p>
 </footer>
-
-<script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-        // Get the go back button element
-        const goBackButton = document.getElementById("BackClick");
-        // Add event listener to the Go Back button
-        goBackButton.addEventListener("click", function () {
-            // Go back to the previous page
-            history.back();
-        });
-    });
-
-</script>
 
 </body>
 </html>

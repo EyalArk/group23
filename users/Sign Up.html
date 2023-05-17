@@ -26,13 +26,11 @@
         <label for="confirmPsw"><b>Confirm Password</b></label>
         <input type="password" id="confirmPsw" required class="input_signUp" required minlength="7">
 
-
-        <label for="name"><b>Name</b></label>
-        <input type="text" id="name" required class="input_signUp" >
+        <label for="name"><b>Full Name</b></label>
+        <input type="text" id="name" required class="input_signUp" required pattern= "[A-Za-z]+[ ][A-Za-z]+">
 
         <label for="phone"><b>Phone</b></label>
-        <input type= "text" id="phone" required class="input_signUp" >
-
+        <input type= "tel" id="phone" required class="input_signUp" required pattern= "[0-9]+">
 
         <button type="submit" id="signUp">Sign Up</button>
 

@@ -66,12 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-
 document.addEventListener("DOMContentLoaded", function() { /*message after press buy now*/
     const buyNowBtn = document.getElementById("buy-now-btn");
     buyNowBtn.addEventListener("click", function() {
-        alert("Thank you for your purchase!");   //  alert message
-
+        alert("Thank you for your purchase!");
     });
 });
-

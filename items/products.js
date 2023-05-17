@@ -52,13 +52,13 @@ function viewDetails(productID) {
 }
 
 
-function getProductIDFromQueryParam() {          /* help function */
+function getProductIDFromQueryParam() {  /* help function */
     const params = new URLSearchParams(window.location.search);
     const productID = params.get("productID");
     return productID;
 }
 
-function filterByBrand(brand) {          /*show the products in the page by the user choose */
+function filterByBrand(brand) { /*show the products in the page by the user choose */
     let placeholder = document.querySelector("#data-output");
     placeholder.innerHTML = '';
     if (brand === 'all') {
@@ -100,3 +100,14 @@ function addToCart(productID) {      /* function to add the chosen products to c
         console.log("Product not found");
     }
 }
+
+function searchForProducts() {
+    document.getElementById("searchForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        const searchInput = document.getElementById("search").value.toLowerCase();
+        let productToDisplay = dataProducts.filter(product => product.name.toLowerCase().includes(searchInput));
+        addingProductsToTable(productToDisplay);
+    })
+}
+
+searchForProducts();
