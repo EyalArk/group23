@@ -4,13 +4,13 @@ body {
 }
 
 header {
-    padding-top: 60px;
+    margin-top: 50px;
+    padding-top: 10px;
     padding-bottom: 40px;
     text-align: center;
     font-size: 40px;
     font-family: "Lucida Handwriting";
 }
-
 
 .flex-container{
     overflow: hidden;
@@ -20,6 +20,7 @@ header {
     justify-content: space-between;
     margin-top: 0px;
     margin-bottom: 30px;
+    justify-content: center;
 }
 
 .flex-container > img {
@@ -27,8 +28,8 @@ header {
 }
 
 #head {
-    margin-top: 70px;
-    font-size: 100px;
+    /*margin-top: 10px;*/
+    font-size: 80px;
     text-align: center;
     color: #fcedd8;
     background: transparent;
@@ -61,6 +62,7 @@ nav {
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    z-index: 100;
 }
 
 nav a, footer a, footer {
@@ -111,7 +113,7 @@ nav img {
     color: white;
     margin: auto;
     width: 800px;
-    padding: 100px;
+    padding: 40px;
     border-radius: 10px;
 }
 
@@ -144,8 +146,10 @@ footer p {
 #logo{
     height: 250px;
     width: 250px;
-    margin: 50px;
-    padding: 10px;
+    top-margin: 20px;
+    margin-bottom: 0px;
+    top-padding: 10px;
+    padding-bottom: 0px;
     justify-content: center;
     align-items: center;
 }
@@ -188,7 +192,6 @@ footer p {
     75%  {transform: scale(1.1);}
 }
 
-
 .table-container{
     justify-content: center;
     overflow: hidden;
@@ -215,6 +218,23 @@ table img {
     text-align: center;
 }
 
+@media screen and (max-width: 980px) {
+    table img {
+        display: flex;
+        width: 70%;
+        height: 70%;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .flip-card {
+        display: none;
+    }
+    .flip-header{
+        display: none;
+    }
+}
 
 /*Sign in && Sign up && Contact us*/
 
@@ -263,6 +283,7 @@ input, textarea {
     display: flex;
     align-items: center;
 }
+
 #signUpLink:visited {
     color: #ffffff;
 }
@@ -282,8 +303,6 @@ input, textarea {
     justify-content: center;
 }
 
-
-
 /*#loginBtn, #signUp, #submit:hover {*/
 
 #signUp:hover {
@@ -296,7 +315,6 @@ input, textarea {
     transform: translateY(4px);
 }
 
-
 .item{
     width: 100px;
     height: 100px;
@@ -307,7 +325,6 @@ input, textarea {
     justify-content: center;
     align-items: center;
 }
-
 
 #itemInfo {
     position: absolute;
@@ -451,6 +468,8 @@ input, textarea {
     will-change: box-shadow,transform;
     font-size: 18px;
     margin: 4px;
+
+
 }
 
 .btnFilter:focus {
@@ -504,13 +523,20 @@ input, textarea {
 
 /*Slide Show*/
 
-.mySlides{
-    margin: 50px;
-    padding: 10px;
-    margin-top: 80px;
+.Slide{
+    /*margin: 50px;*/
+    /*padding: 10px;*/
+    margin-top: 40px;
+    margin-right: 220px;
     display: none;
     width: 250px;
     hight: 250px;
+    justify-content:center;
+}
+
+.Slide img{
+    border-radius: 20px;
+    filter: drop-shadow(0 0 1rem midnightblue);
 }
 
 /* Fading animation */

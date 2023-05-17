@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var slideIndex = 0;
 
     function showSlides1() {
-        var slides = document.getElementsByClassName("mySlides");
+        var slides = document.getElementsByClassName("Slide");
         if (slides.length === 0) {
             return;
         }
