@@ -2,7 +2,7 @@
 
 let dataProducts;
 
-fetch("products.json")    /* connect to the products json page*/
+fetch("../products.json")    /* connect to the products json page*/
     .then(function (response) {
         return response.json();
     })
@@ -48,7 +48,7 @@ function addingProductsToTable(prods) {      /*put the products in the table */
 }
 
 function viewDetails(productID) {
-    window.location.href = `../items/details.html?productID=${productID}`;
+    window.location.href = `../views/details.html`;
 }
 
 

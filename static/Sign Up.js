@@ -1,6 +1,6 @@
 
 // Fetch the users data from - users.json
-fetch("users.json")
+fetch("../users.json")
     .then(response => response.json())
     .then(data => {
         // assign the retrieved data to the users variable
