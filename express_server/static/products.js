@@ -1,8 +1,8 @@
-
-
+import products from './products.json' assert { type: "json" };
+console.log(products);
 let dataProducts;
 
-fetch("../products.json")    /* connect to the products json page*/
+fetch(`../products.json`)    /* connect to the products json page*/
     .then(function (response) {
         return response.json();
     })
@@ -36,7 +36,7 @@ function addingProductsToTable(prods) {      /*put the products in the table */
                  onmouseout="this.src='${product.image}'">
           </td>
           <td>
-            <button class="btnDetails" onclick="viewDetails('${product.ID}')">View Details</button> 
+            <button class="btnDetails" onclick="viewDetails('${product.ID}')">View Details</button>
           </td>
           <td>
             <button class="btnDetails" onclick="addToCart(${product.ID})">Add To Cart</button>
