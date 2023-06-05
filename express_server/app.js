@@ -2,7 +2,11 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const port = 3000;
+const BodyParser = require("body-parser");
 app.use(express.static(path.join(__dirname,"static")));
+app.use(BodyParser.json());
+app.use(BodyParser.urlencoded({extended:true}));
+
 app.get('/',(req,res) => {
     res.sendFile(path.join(__dirname,"views/signIn.html"));
 })
@@ -12,7 +16,6 @@ app.get('/aboutUs',(req,res) => {
 app.get('/contactUs',(req,res) => {
     res.sendFile(path.join(__dirname,"views/contactUs.html"));
 })
-
 app.get('/homePage',(req,res) => {
     res.sendFile(path.join(__dirname,"views/homePage.html"));
 })
@@ -31,6 +34,13 @@ app.get('/SignIn',(req,res) => {
 app.get('/SignUp',(req,res) => {
     res.sendFile(path.join(__dirname,"views/signUp.html"));
 })
+
+app.post('/UserSignUp',(req,res) => {
+    res.send("hiii");
+})
+
+
+
 app.listen(port, ()=> {
-    console.log("Server is running on port",port);
+    console.log("Server is running on port:",port);
 })

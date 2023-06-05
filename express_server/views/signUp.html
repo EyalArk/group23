@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script defer src="../static/Sign%20Up.js"></script>
-    <script defer src="../static/users.json"></script>
+    <script defer src="Sign%20Up.js"></script>
+    <script defer src="users.json"></script>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel ="stylesheet" href ="style.css">
@@ -14,8 +14,8 @@
     Sign Up
 </header>
 
-<div >
-    <form id = "details" class="content">
+<div>
+    <form id = "details" class="content" action="/UserSignUp" method="post">
 
         <label for="accountEmail"><b>Email</b></label>
         <input type="email" id="accountEmail" required name="email" class="input_signUp" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
@@ -32,11 +32,11 @@
         <label for="phone"><b>Phone</b></label>
         <input type= "tel" id="phone" required class="input_signUp" required pattern="[0-9]+">
 
-        <button type="submit" id="signUp">Sign Up</button>
+        <button type="submit" id="signUp" value="Sign Up">Sign Up</button>
 
         <div id="signInContainer">
             <br>
-            <a id = "BackClick" href="signIn.html"  style="background-color:#3e8e41">Back To Sign In</a>
+            <a id = "BackClick" href="/signIn"  style="background-color:#3e8e41">Back To Sign In</a>
         </div>
     </form>
 </div>

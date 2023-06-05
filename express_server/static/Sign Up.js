@@ -48,7 +48,7 @@ fetch("../users.json")
                 localStorage.setItem("users", JSON.stringify(users));
 
                 // Move to sign in page after registeration
-                window.location.href = "../users/Sign%20In.html";
+                window.location.href = "/SignIn";
             }
         });
     })
