@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = 3000;
+const port = 3306;
 const BodyParser = require("body-parser");
 app.use(express.static(path.join(__dirname,"static")));
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({extended:true}));
+const sql = require('../express_server/db/db');
 
 app.get('/',(req,res) => {
     res.sendFile(path.join(__dirname,"views/signIn.html"));
@@ -38,8 +39,6 @@ app.get('/SignUp',(req,res) => {
 app.post('/UserSignUp',(req,res) => {
     res.send("hiii");
 })
-
-
 
 app.listen(port, ()=> {
     console.log("Server is running on port:",port);
