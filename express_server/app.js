@@ -3,13 +3,18 @@ const app = express();
 const path = require('path');
 const port = 3000;
 const BodyParser = require("body-parser");
-app.use(express.static(path.join(__dirname,"static")));
 app.use(BodyParser.json());
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname,"static")));
 app.use(BodyParser.urlencoded({extended:true}));
+app.set('views',path.join(__dirname,'views'));
+app.set('view engine','pug');
 const sql = require('../express_server/db/db');
 
 app.get('/',(req,res) => {
-    res.sendFile(path.join(__dirname,"views/signIn.html"));
+     res.sendFile(path.join(__dirname,"views/signIn.html"));
+    // res.render('index');
 })
 app.get('/aboutUs',(req,res) => {
     res.sendFile(path.join(__dirname,"views/aboutUs.html"));
@@ -37,6 +42,12 @@ app.get('/SignUp',(req,res) => {
     res.sendFile(path.join(__dirname,"views/signUp.html"));
 })
 
+app.get('/SignOut',(req,res) => {
+    res.clearCookie("id")
+    res.sendFile(path.join(__dirname,"views/signIn.html"));
+})
+
+
 app.post('/UserSignUp',(req,res) => {
 if (!req.body){
     res.status(400).send({message:"form cant be empty"});
@@ -57,7 +68,12 @@ sql.query(q1,newUser,(err,sqlres)=>{
         return;
     }
     console.log("created new user:", {id:sqlres.insertId});
-     res.redirect('/SignIn');
+    res.cookie ("id",req.body.id);
+    res.cookie ("email",req.body.email);
+    res.cookie ("psw",req.body.psw);
+    res.cookie ("name",req.body.name);
+    res.cookie ("phone",req.body.phoneNum);
+    res.redirect('/SignIn');
     return;
 });
 });
