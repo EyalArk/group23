@@ -16,12 +16,12 @@
 
 <div class="flex-container">
     <div class="content">
-        <form action="" method="" id="login">
+        <form action="/signInUser" method="post" id="login">
 
             <label for="accountEmail" >Email</label>
-            <input type="email" placeholder="Enter your email" id="accountEmail" required>
+            <input type="email"  name = loginEmail placeholder="Enter your email" id="accountEmail" required>
             <label for="psw">Password</label>
-            <input type="password" placeholder="Enter Password" id="psw" required>
+            <input type="password"  name = loginPsw placeholder="Enter Password" id="psw" required>
             <button type="submit" id="loginBtn">Login</button>
             <br>
             <div id="signUpContainer">
