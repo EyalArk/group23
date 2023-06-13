@@ -1,0 +1,54 @@
+doctype html
+html(lang="en")
+    head
+        link(rel= "stylesheet" href ="style.css")
+        script(defer src ="script.js")
+        script(defer src ="homePage.js")
+        meta(charset="UTF-8")
+        title Title
+    body
+        nav
+            a.homeBtn(href='/homePage') Home
+            a(href='/products') Products
+            a(href='/myCart') My Cart
+            a(href='/myOrder') My Orders
+            #loggedInUserContainer
+                #loggedInUserName
+                a#logoutLink (href='signIn.html', style='color: red') Logout
+
+    header about Us
+    .content
+        p "E23" is a platform that started from a small business and a dream to use our expertise as long-time collectors to help *you* find your dream pair.
+        p All the products on this site are authentic!
+        p "We at E23have a variety of Sneakers with high-end products to your choice.
+        p "Beer Sheva - Metsada 11 Street"
+        .map
+            h4 Find our location via Maps:
+            a.nav-link(href='https://goo.gl/maps/UK7wbWjJjzGpksXy6', target='_blank')
+            img(src='pics/map.png', width='200', height='200')
+    br
+    br
+
+    .flip-cards-container
+        .flip-card
+            .flip-card-inner
+                .flip-card-front
+                    h1 Amit Fedali
+                    img(src='pics/aboutPics/Amit.jpg', alt='Avatar', style='width:300px;height:300px;')
+                .flip-card-back
+                    h1 My Favorite Shoes
+                    img(src='pics/aboutPics/d.webp', alt='Avatar', style='width:450px;height:300px;')
+        header.flip-header
+                Our Team
+        .flip-card
+            .flip-card-inner
+                .flip-card-front
+                    h1 Eyal Arkush
+                    img(src='pics/aboutPics/Eyal.jpg', alt='Avatar', style='width:300px;height:300px;')
+                .flip-card-back
+                    h1 My Favorite Shoes
+                    img(src='pics/aboutPics/h.webp', alt='Avatar', style='width:450px;height:300px;')
+        footer
+            a(href='/aboutUs') About Us
+            a(href='/contactUs') Contact Us
+            p  &copy; "EA" Sneakers Website All rights reserved

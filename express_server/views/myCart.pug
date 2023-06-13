@@ -1,0 +1,36 @@
+doctype html
+html(lang='en')
+    head
+        script(defer='', src='myCart.js')
+        script(defer='', src='products.js')
+        script(defer='', src='script.js')
+        meta(charset='UTF-8')
+        title My Cart
+        link(rel='stylesheet', href='style.css')
+    body
+        nav
+            a.homeBtn(href='/homePage') Home
+            a(href='/products') Products
+            a(href='/myCart') My Cart
+            a(href='/myOrder') My Orders
+            #loggedInUserContainer
+                #loggedInUserName
+                a#logoutLink(href='/signIn', style='color: red') Logout
+        br
+        br
+        header My Cart
+            br
+        .summary-section
+            p#total-price
+            br
+        .summary-section
+            button#clear-all-btn Clear All
+            button#buy-now-btn Buy Now!
+        table.table-container
+            thead
+                tr
+            tbody#cart-items
+        footer
+            a(href='/aboutUs') About Us
+            a(href='/contactUs') Contact Us
+            p &copy; "EA" Sneakers Website All rights reserved

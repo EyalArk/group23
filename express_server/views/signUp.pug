@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+    head
+        script(src="Sign%20Up.js", defer)
+        script(src="users.json", defer)
+        meta(charset="UTF-8")
+        title Title
+        link(rel="stylesheet", href="style.css")
+        link(rel="stylesheet", href="Login.css")
+    body
+        header Sign Up
+        div
+            form#details.content(action="/UserSignUp", method="post")
+                label(for="userId")
+                    b ID
+                input(type="id", id="userID", name="id", class="input_signUp", required, maxlength="9", minlength="9")
+                label(for="accountEmail")
+                    b Email
+                input(type="email", id="accountEmail", name="email", class="input_signUp", required, pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
+                label(for="psw")
+                    b Password
+                input(type="password", id="psw", name="psw", class="input_signUp", required, minlength="7")
+                label(for="name")
+                    b Full Name
+                input(type="text", id="name", name="name", class="input_signUp", required, pattern="[A-Za-z]+[ ][A-Za-z]+")
+                label(for="phone")
+                    b Phone
+                input(type="tel", id="phone", name="phoneNum", class="input_signUp", required, pattern="[0-9]+")
+                button(type="submit", id="signUp" value="Sign Up") Sign Up
+                div#signInContainer
+                    br
+                    a#BackClick(href="/signIn", style="background-color:#3e8e41") Back To Sign In

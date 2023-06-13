@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+    head
+        script(defer='', src='Sign%20In.js')
+        script(defer='', src='users.json')
+        meta(charset='UTF-8')
+        title Title
+        link(rel='stylesheet', href='style.css')
+        link(rel='stylesheet', href='Login.css')
+    body
+        header
+            h1(style='margin-top: 5px; margin-bottom: 10px;') Login
+        .flex-container
+            .content
+                form#login(action='', method='')
+                    label(for='accountEmail') Email
+                    input#accountEmail(type='email', placeholder='Enter your email', required='')
+                    label(for='psw') Password
+                    input#psw(type='password', placeholder='Enter Password', required='')
+                    button#loginBtn(type='submit') Login
+                    br
+                    #signUpContainer
+                        label#newUserLabel New User?
+                        a#signUpLink(href='/signUp') Sign up

@@ -1,0 +1,55 @@
+doctype html
+html(lang='en')
+    head
+        script(src='products.js')
+        meta(charset='UTF-8')
+        meta(name='description', content='This is my website')
+        title Title
+        link(rel='stylesheet', href='style.css')
+    body
+        nav
+            a.homeBtn(href='/homePage') Home
+            a(href='/products') Products
+            a(href='/myCart') My Cart
+            a(href='/myOrder') My Orders
+            #loggedInUserContainer
+                #loggedInUserName
+                a#logoutLink(href='/signIn', style='color: red') Logout
+        header
+            label  More details
+        .flex-container
+            .content
+                .flex-column
+                    h2#productName
+                    #images
+                        img#image1(src='', alt='Image 1', height='350', width='500px')
+                        img#image2(src='', alt='Image 2', height='350', width='500px')
+                    p#details
+                        label
+                            | Product ID:
+                            span#productID
+                        br
+                        label
+                            | Brand:
+                            span#brand
+                        br
+                        label
+                            | Fit:
+                            span#fit
+                        br
+                        label
+                            | Colors:
+                            span#colors
+                        br
+                        label
+                            | Price:
+                            span#price
+                        br
+                        br
+                        br
+                        a#BackClick(onclick='history.back()') Back
+        div
+        footer
+            a(href='/aboutUs') About Us
+            a(href='/contactUs') Contact Us
+            p  &copy; &quot;EA&quot; Sneakers Website All rights reserved
