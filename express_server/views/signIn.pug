@@ -12,11 +12,11 @@ html(lang='en')
             h1(style='margin-top: 5px; margin-bottom: 10px;') Login
         .flex-container
             .content
-                form#login(action='', method='')
+                form#login(action='/signInUser', method='post')
                     label(for='accountEmail') Email
-                    input#accountEmail(type='email', placeholder='Enter your email', required='')
+                    input#accountEmail(type='email', name='loginEmail', placeholder='Enter your email', required='')
                     label(for='psw') Password
-                    input#psw(type='password', placeholder='Enter Password', required='')
+                    input#psw(type='password', name='loginPsw', placeholder='Enter Password', required='')
                     button#loginBtn(type='submit') Login
                     br
                     #signUpContainer

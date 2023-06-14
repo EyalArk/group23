@@ -32,8 +32,7 @@ const createNewUser = (req,res) => {
 
 //login to the site
 const userLogin = (req, res) => {
-    const { loginEmail, loginPsw } = req.body; // Extract email and password from the request body
-
+    const {loginEmail, loginPsw} = req.body;
     const q3 = "SELECT * FROM users WHERE email = ? AND psw = ?";
     res.cookie('email', loginEmail);
     res.cookie('psw', loginPsw);
@@ -46,11 +45,9 @@ const userLogin = (req, res) => {
             return;
         }
         if (sqlres.length > 0) {
-            // User exists, redirect to the homepage
             res.redirect('/homepage');
         } else {
-            // User does not exist, display an error message
-            res.status(401).send({ message: "not exist: " + sqlres.length });
+            res.status(401).send({message: "not exist: " + sqlres.length});
         }
     });
 }
@@ -69,6 +66,10 @@ const showUsers = (req, res) => {
     });
 };
 
-
-
 module.exports = { createNewUser,userLogin, showUsers};
+
+
+
+
+
+
