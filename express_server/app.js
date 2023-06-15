@@ -12,9 +12,7 @@ app.use(BodyParser.urlencoded({extended:true}));
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine','pug');
 const sql = require('../express_server/db/db');
-const createDBCRUD = require('./db/CRUDDB');
-
-// app.get('/CRUD',createDBCRUD.createTable);
+const CreateDB_CRUD = require('./db/CreateDB_CRUD');
 
 app.get('/',(req,res) => {
      res.sendFile(path.join(__dirname,"views/signIn.html"));
@@ -64,6 +62,24 @@ app.get('/SignOut',(req,res) => {
 app.post('/UserSignUp', crud.createNewUser);
 app.get('/showUsers',crud.showUsers);
 app.post('/signInUser',crud.userLogin);
+
+
+// app.get('/research2',(req,res)=>{
+//     const csvPath = path.join(__dirname,"./content/users.csv");
+//     csv().fromFile(csvPath).then((jsonObj)=>{
+//         res.render("items2",{
+//             var1: jsonObj
+//         });});
+// });
+
+//create tables in DB
+
+app.get('/createTable', CreateDB_CRUD.CreateTable);
+
+//drop Tables in DB
+
+app.get('/DropTable', CreateDB_CRUD.DropTable);
+
 
 app.listen(port, ()=> {
     console.log("Server is running on port:",port);

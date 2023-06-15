@@ -66,7 +66,7 @@ const showUsers = (req, res) => {
     });
 };
 
-module.exports = { createNewUser,userLogin, showUsers};
+module.exports = {createNewUser,userLogin, showUsers};
 
 
 
