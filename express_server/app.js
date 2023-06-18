@@ -4,7 +4,7 @@ const path = require('path');
 const crud = require("../express_server/static/crud");
 const port = 3000;
 const BodyParser = require("body-parser");
-const csv = require('csvtojson');
+//const csv = require('csvtojson');
 app.use(BodyParser.json());
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
@@ -81,11 +81,11 @@ app.post('/signInUser',crud.userLogin);
 
 //create tables in DB
 
-app.get('/createTable', CreateDB_CRUD.CreateTable);
+app.get('/createTables', CreateDB_CRUD.createTables);
 
 //drop Tables in DB
 
-app.get('/DropTable', CreateDB_CRUD.DropTable);
+app.get('/dropTables', CreateDB_CRUD.dropTables);
 
 
 app.listen(port, ()=> {
