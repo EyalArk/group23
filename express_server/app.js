@@ -32,7 +32,8 @@ app.get('/contactUs',(req,res) => {
 })
 app.get('/homePage',(req,res) => {
     // res.sendFile(path.join(__dirname,"views/homePage.html"));
-    res.render('homePage');
+    const loggedInUserName = req.cookies.name
+    res.render('homePage',{ loggedInUserName });
 
 })
 app.get('/myCart',(req,res) => {
@@ -80,6 +81,7 @@ app.get('/research2', (req, res) => {
     });
 
 //create tables in DB
+
 app.get('/createTables', CreateDB_CRUD.createTables);
 //drop Tables in DB
 app.get('/dropTables', CreateDB_CRUD.dropTables);
