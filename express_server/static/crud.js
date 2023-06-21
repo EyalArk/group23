@@ -52,7 +52,6 @@ const userLogin = (req, res) => {
     });
 }
 
-
 const showUsers = (req, res) => {
     const q2 = "SELECT * FROM users";
     sql.query(q2, (err, sqlres) => {

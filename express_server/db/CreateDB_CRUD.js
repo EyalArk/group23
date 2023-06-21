@@ -7,10 +7,6 @@ const sql = require('./db');
 //     });
 // };
 
-
-////////////
-
-
 const createTables = (req, res, next) => {
     const q1 = `
     CREATE TABLE IF NOT EXISTS users (
@@ -34,11 +30,11 @@ const createTables = (req, res, next) => {
        fit  VARCHAR(255),
        color1 VARCHAR(255),
        color2 VARCHAR(255),
-      image1 VARCHAR(255),
+       image1 VARCHAR(255),
        image2 VARCHAR(255),
-      price decimal(10, 2),
-      brand VARCHAR(255),
-      color VARCHAR(255)
+       price decimal(10, 2),
+       brand VARCHAR(255),
+       color VARCHAR(255)
     )`;
 
     const q4 = `
@@ -74,6 +70,18 @@ const createTables = (req, res, next) => {
 });
     });
 };
+
+// const InsertToTable = (req,res)=>{
+//     const NewData = {
+//         name: "EE",
+//         email: "email@gmail.com"
+//     };
+//     const q10 = "insert into table users set?";
+//     sql.query(q10,NewData, (err,mysqlres)=>{
+//         if (err) throw err;
+//         res.send('Data inserted into users')
+//     });
+// };
 
 
     const dropTables = (req, res, next) => {

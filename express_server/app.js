@@ -4,7 +4,6 @@ const path = require('path');
 const crud = require("../express_server/static/crud");
 const port = 3000;
 const BodyParser = require("body-parser");
-//const csv = require('csvtojson');
 app.use(BodyParser.json());
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
@@ -14,6 +13,7 @@ app.set('views',path.join(__dirname,'views'));
 app.set('view engine','pug');
 const sql = require('../express_server/db/db');
 const CreateDB_CRUD = require('./db/CreateDB_CRUD');
+const csv = require('csvtojson');
 
 app.get('/',(req,res) => {
      res.sendFile(path.join(__dirname,"views/signIn.html"));
@@ -69,25 +69,25 @@ app.get('/showUsers',crud.showUsers);
 app.post('/signInUser',crud.userLogin);
 
 
-// app.get('/research2', (req, res) => {
-//         const csvPath = path.join(__dirname, "./content/research.csv");
-//         console.log(csvPath);
-//         csv().fromFile(csvPath).then((jsonObj) => {
-//             res.render('items', {
-//                 var1: jsonObj
-//             });
-//         });
-//     });
+app.get('/research2', (req, res) => {
+        const csvPath = path.join(__dirname, "./content/research.csv");
+        console.log(csvPath);
+        csv().fromFile(csvPath).then((jsonObj) => {
+            res.render('items', {
+                var1: jsonObj
+            });
+        });
+    });
 
 //create tables in DB
-
 app.get('/createTables', CreateDB_CRUD.createTables);
-
 //drop Tables in DB
-
 app.get('/dropTables', CreateDB_CRUD.dropTables);
 
-
+//Link to create the Data Base
+app.get('/createDB',(req,res)=>{
+    res.render('createDB');
+});
 app.listen(port, ()=> {
     console.log("Server is running on port:",port);
 })
