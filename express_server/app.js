@@ -15,13 +15,11 @@ const sql = require('../express_server/db/db');
 const CreateDB_CRUD = require('./db/CreateDB_CRUD');
 const csv = require('csvtojson');
 
+
 app.get('/',(req,res) => {
      res.sendFile(path.join(__dirname,"views/signIn.html"));
 })
 
-app.get('/items',(req,res) => {
-   res.render('items')
-})
 app.get('/aboutUs',(req,res) => {
     // res.sendFile(path.join(__dirname,"views/aboutUs.html"));
     res.render('aboutUs');
@@ -70,17 +68,24 @@ app.get('/showUsers',crud.showUsers);
 app.post('/signInUser',crud.userLogin);
 
 
-app.get('/research2', (req, res) => {
-        const csvPath = path.join(__dirname, "./content/research.csv");
-        console.log(csvPath);
-        csv().fromFile(csvPath).then((jsonObj) => {
-            res.render('items', {
+app.get('/users2', (req, res) => {
+    const csvPath = path.join(__dirname, "./content/users.csv");
+    csv().fromFile(csvPath).then((jsonObj) => {
+            res.render('users2', {
                 var1: jsonObj
             });
         });
-    });
+});
 
-//create tables in DB
+
+
+
+
+
+
+
+
+    //create tables in DB
 
 app.get('/createTables', CreateDB_CRUD.createTables);
 //drop Tables in DB
@@ -90,6 +95,7 @@ app.get('/dropTables', CreateDB_CRUD.dropTables);
 app.get('/createDB',(req,res)=>{
     res.render('createDB');
 });
+
 app.listen(port, ()=> {
     console.log("Server is running on port:",port);
 })
