@@ -66,16 +66,47 @@ app.get('/SignOut',(req,res) => {
 app.post('/UserSignUp', crud.createNewUser);
 app.get('/showUsers',crud.showUsers);
 app.post('/signInUser',crud.userLogin);
+app.get('/InsertDataToUsers',crud.InsertDataToUsers);
+app.get('/InsertDataToProducts',crud.InsertDataToProducts);
+app.get('/showProducts',crud.showProducts);
+
+
 
 
 app.get('/users2', (req, res) => {
-    const csvPath = path.join(__dirname, "./content/users.csv");
-    csv().fromFile(csvPath).then((jsonObj) => {
-            res.render('users2', {
-                var1: jsonObj
-            });
-        });
+    const query = 'SELECT * FROM users';
+
+    sql.query(query, (err, results) => {
+        if (err) {
+            console.error('Error retrieving users:', err);
+            res.status(500).send('An error occurred while retrieving users');
+            return;
+        }
+
+        res.render('users2', { users: results });
+    });
 });
+
+
+
+
+// app.get('/getProducts', (req, res) => {
+//     // Perform a query to retrieve the products from your SQL table
+//     const query = 'SELECT * FROM products';
+//
+//     connection.query(query, (error, results) => {
+//         if (error) {
+//             console.error('Error executing MySQL query:', error);
+//             res.sendStatus(500); // Send a 500 Internal Server Error status
+//             return;
+//         }
+//
+//         // Send the retrieved products as a JSON response
+//         res.json(results);
+//     });
+// });
+
+
 
 
 

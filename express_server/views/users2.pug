@@ -18,23 +18,22 @@ html(lang="en")
         #loggedInUserContainer
             #loggedInUserName
             a#logoutLink(href='/signIn', style='color: red') Logout
-    header  User List
+    head
+        title User List
+    body
+        h1 User List
         table
-            thead
+            tr
+                th Email
+                th Password
+                th Name
+                th Phone
+            each user in users
                 tr
-                    th Email
-                    th Password
-                    th Name
-                    th Phone
-
-            tbody
-                each user in var1
-                    tr
-                        td= user.email
-                        td= user.psw
-                        td= user.name
-                        td= user.phoneNum
-
+                    td= user.email
+                    td= user.psw
+                    td= user.name
+                    td= user.phone
         footer
             a(href='/aboutUs') About Us
             a(href='/contactUs') Contact Us

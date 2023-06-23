@@ -13,7 +13,7 @@ const createTables = (req, res, next) => {
       email varchar(255) NOT NULL,
       psw int(8),
       name VARCHAR(255),
-      phone int(255)
+      phone VARCHAR(255)
     )`;
 
     const q2 = `
@@ -21,7 +21,10 @@ const createTables = (req, res, next) => {
       orderId int NOT NULL,
       date DATE,
       totalPrice decimal(10, 2)
+      FOREIGN KEY (email) REFERENCES users (email)) TYPE = INNODB;
     )`;
+
+
 
     const q3 = `
     CREATE TABLE IF NOT EXISTS products (
@@ -36,6 +39,7 @@ const createTables = (req, res, next) => {
        brand VARCHAR(255),
        color VARCHAR(255)
     )`;
+
 
     const q4 = `
     CREATE TABLE IF NOT EXISTS cart (
