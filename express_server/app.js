@@ -67,6 +67,7 @@ app.post('/UserSignUp', crud.createNewUser);
 app.get('/showUsers',crud.showUsers);
 app.post('/signInUser',crud.userLogin);
 app.get('/InsertDataToUsers',crud.InsertDataToUsers);
+app.get('/InsertDataToOrders',crud.InsertDataToOrders);
 app.get('/InsertDataToProducts',crud.InsertDataToProducts);
 app.get('/showProducts',crud.showProducts);
 
@@ -86,6 +87,21 @@ app.get('/users2', (req, res) => {
         res.render('users2', { users: results });
     });
 });
+
+app.get('/orders2', (req, res) => {
+    const query = 'SELECT * FROM orders';
+
+    sql.query(query, (err, results) => {
+        if (err) {
+            console.error('Error retrieving users:', err);
+            res.status(500).send('An error occurred while retrieving users');
+            return;
+        }
+
+        res.render('orders2', { orders: results });
+    });
+});
+
 
 
 

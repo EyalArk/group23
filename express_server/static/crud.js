@@ -122,7 +122,25 @@ const showUsers = (req, res) => {
 
 const InsertDataToUsers = (req,res)=>{
     const Q1 = "INSERT INTO users SET ?";
-    const csvFilePath= path.join(__dirname, "users.csv");
+    const csvFilePath= path.join(__dirname, "../content/users.csv");
+    console.log("CSV File Path:", csvFilePath);
+    csv().fromFile(csvFilePath)
+        .then((jsonObj)=>{
+            jsonObj.forEach(element => {
+                sql.query(Q1, element, (err,mysqlres)=>{
+                    if (err) {
+                        console.log("error in inserting data", err);
+                    }
+                    console.log("creared row sucssesfuly");
+                });
+            });
+        })
+    res.send("data read")
+};
+
+const InsertDataToOrders = (req,res)=>{
+    const Q1 = "INSERT INTO orders SET ?";
+    const csvFilePath= path.join(__dirname, "../content/orders.csv");
     console.log("CSV File Path:", csvFilePath);
     csv().fromFile(csvFilePath)
         .then((jsonObj)=>{
@@ -153,7 +171,7 @@ const showProducts = (req, res) => {
 
 const InsertDataToProducts = (req,res)=>{
     const Q1 = "INSERT INTO products SET ?";
-    const csvFilePath= path.join(__dirname, "products.csv");
+    const csvFilePath= path.join(__dirname, "../content/products.csv");
     console.log("CSV File Path:", csvFilePath);
     csv().fromFile(csvFilePath)
         .then((jsonObj)=>{
@@ -174,7 +192,7 @@ const InsertDataToProducts = (req,res)=>{
 
 
 
-module.exports = {createNewUser,userLogin, showUsers,InsertDataToUsers,showProducts, InsertDataToProducts};
+module.exports = {createNewUser,userLogin, showUsers,InsertDataToUsers,showProducts, InsertDataToProducts, InsertDataToOrders};
 
 
 
