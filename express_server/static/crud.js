@@ -84,7 +84,6 @@ const userLogin = (req, res) => {
     const q3 = "SELECT * FROM users WHERE email = ? AND psw = ?";
     res.cookie("email", loginEmail);
     res.cookie("psw", loginPsw);
-
     let  a = loginEmail;
     let b = loginPsw;
     sql.query(q3, [a, b], (err, sqlres) => {
@@ -103,7 +102,6 @@ const userLogin = (req, res) => {
         }
     });
 }
-
 
 const showUsers = (req, res) => {
     const q2 = "SELECT * FROM users";
@@ -138,6 +136,25 @@ const InsertDataToUsers = (req,res)=>{
     res.send("data read")
 };
 
+const InsertDataToProducts = (req,res)=>{
+    const Q5 = "INSERT INTO products SET ?";
+    const csvFilePath= path.join(__dirname, "../content/products.csv");
+    console.log("CSV File Path:", csvFilePath);
+    csv().fromFile(csvFilePath)
+        .then((jsonObj)=>{
+            jsonObj.forEach(element => {
+                sql.query(Q5, element, (err,mysqlres)=>{
+                    if (err) {
+                        console.log("error in inserting data", err);
+                    }
+                    console.log("creared row sucssesfuly");
+                });
+            });
+        })
+    res.send("data read")
+};
+
+
 const InsertDataToOrders = (req,res)=>{
     const Q1 = "INSERT INTO orders SET ?";
     const csvFilePath= path.join(__dirname, "../content/orders.csv");
@@ -157,8 +174,8 @@ const InsertDataToOrders = (req,res)=>{
 };
 
 const showProducts = (req, res) => {
-    const q2 = "SELECT * FROM products";
-    sql.query(q2, (err, sqlres) => {
+    const q6 = "SELECT * FROM products";
+    sql.query(q6, (err, sqlres) => {
         if (err) {
             console.log("error in q2:", err);
             res.status(400).send({ message: "Can't show all users" });
@@ -168,29 +185,6 @@ const showProducts = (req, res) => {
         return;
     });
 };
-
-const InsertDataToProducts = (req,res)=>{
-    const Q1 = "INSERT INTO products SET ?";
-    const csvFilePath= path.join(__dirname, "../content/products.csv");
-    console.log("CSV File Path:", csvFilePath);
-    csv().fromFile(csvFilePath)
-        .then((jsonObj)=>{
-            jsonObj.forEach(element => {
-                sql.query(Q1, element, (err,mysqlres)=>{
-                    if (err) {
-                        console.log("error in inserting data", err);
-                    }
-                    console.log("creared row sucssesfuly");
-                });
-            });
-        })
-    res.send("data read")
-};
-
-
-
-
-
 
 module.exports = {createNewUser,userLogin, showUsers,InsertDataToUsers,showProducts, InsertDataToProducts, InsertDataToOrders};
 

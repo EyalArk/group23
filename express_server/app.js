@@ -71,12 +71,8 @@ app.get('/InsertDataToOrders',crud.InsertDataToOrders);
 app.get('/InsertDataToProducts',crud.InsertDataToProducts);
 app.get('/showProducts',crud.showProducts);
 
-
-
-
 app.get('/users2', (req, res) => {
     const query = 'SELECT * FROM users';
-
     sql.query(query, (err, results) => {
         if (err) {
             console.error('Error retrieving users:', err);
@@ -90,11 +86,10 @@ app.get('/users2', (req, res) => {
 
 app.get('/orders2', (req, res) => {
     const query = 'SELECT * FROM orders';
-
     sql.query(query, (err, results) => {
         if (err) {
-            console.error('Error retrieving users:', err);
-            res.status(500).send('An error occurred while retrieving users');
+            console.error('Error retrieving orders:', err);
+            res.status(500).send('An error occurred while retrieving orders');
             return;
         }
 
@@ -102,9 +97,18 @@ app.get('/orders2', (req, res) => {
     });
 });
 
+app.get('/products2', (req, res) => {
+    const query = 'SELECT * FROM products';
+    sql.query(query, (err, results) => {
+        if (err) {
+            console.error('Error retrieving products:', err);
+            res.status(500).send('An error occurred while retrieving products');
+            return;
+        }
 
-
-
+        res.render('products2', { products: results });
+    });
+});
 
 // app.get('/getProducts', (req, res) => {
 //     // Perform a query to retrieve the products from your SQL table

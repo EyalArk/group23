@@ -1,0 +1,50 @@
+//extends layout
+doctype html
+html(lang="en")
+    head
+        link(rel= "stylesheet" href ="style.css")
+        script(defer src ="script.js")
+        script(defer src ="app.js")
+        script(defer src ="crud.js")
+        script(defer src ="homePage.js")
+        meta(charset="UTF-8")
+        title Title
+    body
+    nav
+        a.homeBtn(href='/homePage') Home
+        a(href='/products') Products
+        a(href='/myCart') My Cart
+        a(href='/myOrder') My Orders
+        #loggedInUserContainer
+            #loggedInUserName
+            a#logoutLink(href='/signIn', style='color: red') Logout
+    head
+        title products
+    body
+        h1 products
+        table
+            tr
+                th productId
+                th name
+                th fit
+                th color1
+                th color2
+                th image1
+                th image2
+                th price
+                th brand
+    each product in products
+                tr
+                    td= product.productId
+                    td= product.name
+                    td= product.fit
+                    td= product.color1
+                    td= product.color2
+                    td= product.image1
+                    td= product.image2
+                    td= product.price
+                    td= product.brand
+        footer
+            a(href='/aboutUs') About Us
+            a(href='/contactUs') Contact Us
+            p  &copy; "EA" Sneakers Website All rights reserved
