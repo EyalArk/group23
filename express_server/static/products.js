@@ -20,7 +20,6 @@ function fetchProductToDisplay(products) {              /* display the products 
         displayProductData(product);
     }
 }
-
 function addingProductsToTable(prods) {      /*put the products in the table */
     let placeholder = document.querySelector("#data-output");
     let out = "";
@@ -51,13 +50,11 @@ function viewDetails(productID) {
     window.location.href = `../views/details.html`;
 }
 
-
 function getProductIDFromQueryParam() {  /* help function */
     const params = new URLSearchParams(window.location.search);
     const productID = params.get("productID");
     return productID;
 }
-
 function filterByBrand(brand) { /*show the products in the page by the user choose */
     let placeholder = document.querySelector("#data-output");
     placeholder.innerHTML = '';

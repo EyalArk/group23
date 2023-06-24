@@ -63,14 +63,6 @@ app.get('/SignOut',(req,res) => {
     res.sendFile(path.join(__dirname,"views/signIn.html"));
 })
 
-app.post('/UserSignUp', crud.createNewUser);
-app.get('/showUsers',crud.showUsers);
-app.post('/signInUser',crud.userLogin);
-app.get('/InsertDataToUsers',crud.InsertDataToUsers);
-app.get('/InsertDataToOrders',crud.InsertDataToOrders);
-app.get('/InsertDataToProducts',crud.InsertDataToProducts);
-app.get('/showProducts',crud.showProducts);
-
 app.get('/users2', (req, res) => {
     const query = 'SELECT * FROM users';
     sql.query(query, (err, results) => {
@@ -79,7 +71,6 @@ app.get('/users2', (req, res) => {
             res.status(500).send('An error occurred while retrieving users');
             return;
         }
-
         res.render('users2', { users: results });
     });
 });
@@ -92,7 +83,6 @@ app.get('/orders2', (req, res) => {
             res.status(500).send('An error occurred while retrieving orders');
             return;
         }
-
         res.render('orders2', { orders: results });
     });
 });
@@ -105,7 +95,6 @@ app.get('/products2', (req, res) => {
             res.status(500).send('An error occurred while retrieving products');
             return;
         }
-
         res.render('products2', { products: results });
     });
 });
@@ -128,8 +117,6 @@ app.get('/products2', (req, res) => {
 
 
 
-//testttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
-
 
     //create tables in DB
 
@@ -141,6 +128,13 @@ app.get('/dropTables', CreateDB_CRUD.dropTables);
 app.get('/createDB',(req,res)=>{
     res.render('createDB');
 });
+app.post('/UserSignUp', crud.createNewUser);
+app.get('/showUsers',crud.showUsers);
+app.post('/signInUser',crud.userLogin);
+app.get('/InsertDataToUsers',crud.InsertDataToUsers);
+app.get('/InsertDataToOrders',crud.InsertDataToOrders);
+app.get('/InsertDataToProducts',crud.InsertDataToProducts);
+app.get('/showProducts',crud.showProducts);
 
 app.listen(port, ()=> {
     console.log("Server is running on port:",port);

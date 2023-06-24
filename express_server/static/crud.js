@@ -116,8 +116,6 @@ const showUsers = (req, res) => {
     });
 };
 
-
-
 const InsertDataToUsers = (req,res)=>{
     const Q1 = "INSERT INTO users SET ?";
     const csvFilePath= path.join(__dirname, "../content/users.csv");
