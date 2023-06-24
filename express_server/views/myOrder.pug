@@ -1,14 +1,12 @@
 doctype html
 html(lang='en')
     head
-        script(defer='', src='script.js')
         meta(charset='UTF-8')
-        title Title
+        title My Cart
         link(rel='stylesheet', href='style.css')
+        script(defer, src='script.js')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
     body
-        header My Orders
-            br
-            img#logo3(src='pics/cart3.png', alt='cart')
         nav
             a.homeBtn(href='/homePage') Home
             a(href='/products') Products
@@ -17,25 +15,23 @@ html(lang='en')
             #loggedInUserContainer
                 #loggedInUserName
                 a#logoutLink(href='/signIn', style='color: red') Logout
-        #cart3.flex-container
-        table#myOrders
-            tbody
-                tr
-                    th Order Number
-                    th Date
-                    th Total Sum
-                    th Status
-                tr
-                    td 1
-                    td 10/5/23
-                    td 200$
-                    td picked up
-                tr
-                    td 2
-                    td 11/5/23
-                    td 1000$
-                    td picked up
-        footer
-            a(href='/aboutUs') About Us
-            a(href='/contactUs') Contact Us
-            p  &copy; "EA"Sneakers Website All rights reserved
+    br
+    header Orders List
+    table.table-container
+        tr
+            th Order
+            th date
+            th totalPrice
+            th userEmail
+        each order, index in orders
+            tr
+                //td= order.orderId
+                td= index+1
+                td= (order.date)
+                td= order.totalPrice
+                td= order.userEmail
+
+    footer
+        a(href='/aboutUs') About Us
+        a(href='/contactUs') Contact Us
+        p &copy; "EA" Sneakers Website All rights reserved

@@ -55,17 +55,17 @@ function getProductIDFromQueryParam() {  /* help function */
     const productID = params.get("productID");
     return productID;
 }
-function filterByBrand(brand) { /*show the products in the page by the user choose */
-    let placeholder = document.querySelector("#data-output");
-    placeholder.innerHTML = '';
-    if (brand === 'all') {
-        addingProductsToTable(dataProducts);
-    } else {
-        let productToDisplay = dataProducts.filter(product => product.brand === brand);
-        console.log(productToDisplay);
-        addingProductsToTable(productToDisplay);
-    }
-}
+// function filterByBrand(brand) { /*show the products in the page by the user choose */
+//     let placeholder = document.querySelector("#data-output");
+//     placeholder.innerHTML = '';
+//     if (brand === 'all') {
+//         addingProductsToTable(dataProducts);
+//     } else {
+//         let productToDisplay = dataProducts.filter(product => product.brand === brand);
+//         console.log(productToDisplay);
+//         addingProductsToTable(productToDisplay);
+//     }
+// }
 
 function displayProductData(product) {
     document.getElementById("productName").textContent = product.name;

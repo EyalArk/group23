@@ -1,12 +1,11 @@
 doctype html
 html(lang='en')
     head
-        script(defer='', src='myCart.js')
-        script(defer='', src='products.js')
-        script(defer='', src='script.js')
         meta(charset='UTF-8')
         title My Cart
         link(rel='stylesheet', href='style.css')
+        script(defer, src='script.js')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
     body
         nav
             a.homeBtn(href='/homePage') Home
@@ -18,19 +17,82 @@ html(lang='en')
                 a#logoutLink(href='/signIn', style='color: red') Logout
         br
         br
-        header My Cart
-            br
+        header
+            h1 My Cart
         .summary-section
             p#total-price
             br
         .summary-section
-            button#clear-all-btn Clear All
-            button#buy-now-btn Buy Now!
+            button.btnFilter(onclick="location.href='/clearCart'") Clear All
+            button.btnFilter(onclick="location.href='/addOrder'")  Buy Now!
         table.table-container
             thead
+
                 tr
-            tbody#cart-items
+                    th Name
+                    th Quantity
+                    th
+                    th Price
+                    th total price
+
+                each c in cart
+                    tr
+
+                        td= c.name
+                        td= c.quantity
+                        td
+                            .image-container
+                            img.image1(src=c.image1)
+                            img.image2(src=c.image2)
+
+                        td= c.price
+                        td
+
+                            button.btn-remove-item(onclick=`console.log('${c.cartId}'); location.href = '/removeFromCart/' + ${c.cartId}`) Remove
+                        -var totalPriceProducts = (c.price * c.quantity).toFixed(2)
+                        td= totalPriceProducts
+
+
         footer
             a(href='/aboutUs') About Us
             a(href='/contactUs') Contact Us
             p &copy; "EA" Sneakers Website All rights reserved
+
+
+
+//doctype html
+//html(lang='en')
+//    head
+//        script(defer='', src='myCart.js')
+//        script(defer='', src='products.js')
+//        script(defer='', src='script.js')
+//        meta(charset='UTF-8')
+//        title My Cart
+//        link(rel='stylesheet', href='style.css')
+//    body
+//        nav
+//            a.homeBtn(href='/homePage') Home
+//            a(href='/products') Products
+//            a(href='/myCart') My Cart
+//            a(href='/myOrder') My Orders
+//            #loggedInUserContainer
+//                #loggedInUserName
+//                a#logoutLink(href='/signIn', style='color: red') Logout
+//        br
+//        br
+//        header My Cart
+//            br
+//        .summary-section
+//            p#total-price
+//            br
+//        .summary-section
+//            button#clear-all-btn Clear All
+//            button#buy-now-btn Buy Now!
+//        table.table-container
+//            thead
+//                tr
+//            tbody#cart-items
+//        footer
+//            a(href='/aboutUs') About Us
+//            a(href='/contactUs') Contact Us
+//            p &copy; "EA" Sneakers Website All rights reserved

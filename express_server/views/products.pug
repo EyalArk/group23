@@ -1,13 +1,13 @@
-
-doctype html
-html(lang='en')
+<!DOCTYPE html>
+html(lang="en")
     head
-        script(defer='', src='products.js')
-        script(defer='', src='script.js')
-        // <script defer src="Search2.js"></script>
-        meta(charset='UTF-8')
+        link(rel="stylesheet" href="style.css")
+        script(defer src="script.js")
+        script(defer src="app.js")
+        script(defer src="crud.js")
+        script(defer src="homePage.js")
+        meta(charset="UTF-8")
         title Title
-        link(rel='stylesheet', href='style.css')
     body
         nav
             a.homeBtn(href='/homePage') Home
@@ -17,28 +17,35 @@ html(lang='en')
             #loggedInUserContainer
                 #loggedInUserName
                 a#logoutLink(href='/signIn', style='color: red') Logout
-        br
-        br
         header Products
-        form#searchForm
-            input#search(type='text', placeholder='Search..', name='search')
-        #filtersButtons
-            button.btnFilter(onclick="filterByBrand('all')")  Show all
-            button.btnFilter(onclick="filterByBrand('Nike')") Nike
-            button.btnFilter(onclick="filterByBrand('New Balance')") New Balance
-            button.btnFilter(onclick="filterByBrand('Yeezy')")  Yeezy
+        form#searchForm.content(action="/products55", method="get")
+            input#search(type='text', placeholder='Search..', name='search' )
+        #filtersButtons.container
+            button.btnFilter(onclick="location.href='/All'")  Show all
+            button.btnFilter(id="btnNike" onclick="location.href='/Nike'") Nike
+            button.btnFilter(onclick="location.href='/NewBalance'") New Balance
+            button.btnFilter(onclick="location.href='/Yeezy'")  Yeezy
+
+
         .table-container
             table
-                thead
-                    tr
-                tbody#data-output
+                tr
+                    each product in products
+                        tr
+                            td= product.name
+                            td= product.fit
+                            td
+                                .image-container
+                                    img.image1(src=product.image1)
+                                    img.image2(src=product.image2)
+                            td= product.price
+                            td
+                                .filtersButtons
+                                    #btnDetails1
+                                        button.button1(onclick="ViewMore()") Details
+                                    #btnDetails2
+                                        button.button2(onclick=`console.log('${product.productId}'); location.href = '/addToCart/' + ${product.productId}`) Add To Cart
         footer
             a(href='/aboutUs') About Us
             a(href='/contactUs') Contact Us
-            p  &copy; "EA"Sneakers Website All rights reserved
-
-
-
-
-
-
+            p &copy; "EA" Sneakers Website All rights reserved
