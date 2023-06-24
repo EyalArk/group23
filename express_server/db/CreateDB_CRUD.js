@@ -28,10 +28,6 @@ const createTables = (req, res, next) => {  // function for create all the table
         FOREIGN KEY (userEmail) REFERENCES users(email) ON DELETE CASCADE
     )`;
 
-
-
-
-
     const q3 = `
     CREATE TABLE IF NOT EXISTS products (
   productId int NOT NULL,
@@ -43,10 +39,10 @@ const createTables = (req, res, next) => {  // function for create all the table
   image2 VARCHAR(255),
   price decimal(10, 2),
   brand VARCHAR(255),
-  color VARCHAR(255),
   PRIMARY KEY (productId),
   INDEX idx_productId (productId)
     )`;
+
 
 
     const q4 = `
@@ -89,18 +85,6 @@ CREATE TABLE IF NOT EXISTS cart (
 });
     });
 };
-
-// const InsertToTable = (req,res)=>{
-//     const NewData = {
-//         name: "EE",
-//         email: "email@gmail.com"
-//     };
-//     const q10 = "insert into table users set?";
-//     sql.query(q10,NewData, (err,mysqlres)=>{
-//         if (err) throw err;
-//         res.send('Data inserted into users')
-//     });
-// };
 
 
     const dropTables = (req, res, next) => {

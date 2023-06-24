@@ -1,0 +1,11 @@
+orderId,date,totalPrice,userEmail
+1.00, 2023-06-01,1599.99,amit@gmail.com
+2.00, 2023-06-02,1599.99,amit@gmail.com
+1.00, 2023-06-03,1599.99,roi@gmail.com
+1.00, 2023-06-04,1599.99,oz@gmail.com
+2.00, 2023-06-05,1599.99,oz@gmail.com
+3.00, 2023-06-06,1599.99,oz@gmail.com
+1.00, 2023-06-07,1599.99,eyal@gmail.com
+2.00, 2023-06-08,1599.99,eyal@gmail.com
+3.00, 2023-06-09,1599.99,eyal@gmail.com
+4.00, 2023-06-10,1599.99,eyal@gmail.com
