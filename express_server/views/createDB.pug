@@ -1,9 +1,23 @@
 //CreateDB
+//extends layout
+link(rel="stylesheet" href="style.css")
 block content
-    h1 links to create DB
-    h3 click on the links to create the DB
+    h1 Please click on the links below in order to CRUD the DB tables of this site.
     ol
         li
-            a(href="/createTables") Link to create tables
+            a(href="/createTables") Click on the link to Create the DB tables
+        br
         li
-            a(href="/dropTables") Link to drop the tables
+            a(href="/InsertDataToProducts") Click on the link Insert data to Products table
+        br
+        li
+            a(href="/InsertDataToUsers") Click on the link Insert data to Users table
+        br
+        li
+            a(href="/InsertDataToOrders") Click on the link Insert data to Orders table
+        br
+        //li
+        //    a(href="/dropTables") Click on the link Insert data to Cart table
+        li
+            a(href="/dropTables") Click on the link to Drop the DB tables
+        br

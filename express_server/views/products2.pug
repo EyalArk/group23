@@ -18,7 +18,6 @@ html(lang="en")
             #loggedInUserContainer
                 #loggedInUserName
                 a#logoutLink(href='/signIn', style='color: red') Logout
-
         header Products
         form#searchForm
             input#search(type='text', placeholder='Search..', name='search')
@@ -42,9 +41,9 @@ html(lang="en")
                             td
                                 .filtersButtons
                                     #btnDetails1
-                                        button.button1(onclick="editProduct()") Details
+                                        button.button1(onclick="ViewMore()") Details
                                     #btnDetails2
-                                        button.button2(onclick="deleteProduct()") Add To Cart
+                                        button.button2(onclick="AddToCart()") Add To Cart
 
         footer
             a(href='/aboutUs') About Us

@@ -1,3 +1,16 @@
 productId,name,fit,color1,color2,image1,image2,price,brand
-1.00,Air Jordan 1 Stealth,High,grey,White,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-og-stealth-1.webp,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-og-stealth-2.webp,699.99,Nike
-2.00,Air Jordan 1 Taxi,High,Yellow,White,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-og-yellow-toe-1.webp,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-og-yellow-toe-2.webp,699.99,Nike
+1,Air Jordan 1 Stealth,High,grey,White,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-og-stealth-1.webp,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-og-stealth-2.webp,699.99,Nike
+2,Air Jordan 1 Taxi,High,Yellow,White,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-og-yellow-toe-1.webp,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-og-yellow-toe-2.webp,699.99,Nike
+3,Air Jordan 1 Bordeaux,High,Dark Red,White,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-bordeaux-1.webp,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-bordeaux-2.webp,699.99,Nike
+4,Air Jordan 1 Electro Orange,High,Orange,White,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-electro-orange-1.webp,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-retro-high-electro-orange-2.webp,699.99,Nike
+5,Air Jordan 1 Moch,Low,Brown,White,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-low-mocha-1.webp,../pics/ItemPics/1/Thousand-Lakes-Store-air-jordan-1-low-mocha-2.webp,699.99,Nike
+6,Air Jordan 4 Seafoam,High,Green,White,./pics/ItemPics/4/Thousand-Lakes-Store-Air-Jordan-4-Retro-Seafoam--1.webp,../pics/ItemPics/4/TL-air-jordan-4-seafoam-2.webp,799.99,Nike
+7,Air Jordan 4 SE Craft,High,Grey,White,../pics/ItemPics/4/TL-Air-Jordan-4-Craft-Photon-Dust-1.webp,../pics/ItemPics/4/Thousand-Lakes-Store-Air-Jordan-4-SE-Craft-Photon-Dust-2.webp,799.99,Nike
+8,Dunk Panda,Low,Black,White,../pics/ItemPics/Dunk/Thousand-Lakes-Nike-Dunk-Low-White-Black-Release-Date-dd1503-101-1_800x_c3428838-63db-444b-b853-982b64200e8d.webp,../pics/ItemPics/Dunk/Thousand-Lakes-Nike-Dunk-Low-White-Black-Release-Date-dd1503-101-2_800x_92b22428-55b9-40bf-b7e3-707ce8d1cb53.webp,499.99,Nike
+9,Dunk Purple,Low,Purple,White,../pics/ItemPics/Dunk/Thousand-Lakes-Store-nike-dunk-low-championship-court-purple-1.webp,../pics/ItemPics/Dunk/Thousand-Lakes-Store-nike-dunk-low-championship-court-purple-2.webp,499.99,Nike
+10,Dunk Harvest Moon,Low,Orange,White,../pics/ItemPics/Dunk/Thousand-Lakes-Store-nike-dunk-low-harvest-moon-w-1.webp,../pics/ItemPics/Dunk/Thousand-Lakes-Store-nike-dunk-low-harvest-moon-w-2.webp,499.99,Nike
+11,New Balance Protection Pack,Low,Grey,White,../pics/ItemPics/NB/Thousand-Lakes-Store-New-Balance-2002R-Protection-Pack-Rain-Cloud-1.webp,../pics/ItemPics/NB/Thousand-Lakes-Store-New-Balance-2002R-Protection-Pack-Rain-Cloud-2.webp,599.99,New Balance
+12,New Balance 550,Low,Grey,White,../pics/ItemPics/NB/Thousand-Lakes-Store-new-balance-550-white-grey-1.webp,../pics/ItemPics/NB/Thousand-Lakes-Store-new-balance-550-white-grey-2.webp,599.99,New Balance
+13,Yeezy Foam RNR Stone Stage,Low,Cream,None,../pics/ItemPics/Yeezy/Thousand-Lakes-Store-adidas-yeezy-foam-rnnr-stone-sage-1.webp,../pics/ItemPics/Yeezy/Thousand-Lakes-Store-adidas-yeezy-foam-rnnr-stone-sage-2.webp,399.99,New Balance
+14,"Yeezy Slide Orche""",Low,Brown,None,../pics/ItemPics/Yeezy/Thousand-Lakes-Store-adidas-yeezy-slide-ochre-1.webp,../pics/ItemPics/Yeezy/Thousand-Lakes-Store-adidas-yeezy-slide-ochre-2.webp,299.99,Yeezy
+15,Yeezy Slide Pure,Low,Cream,None,../pics/ItemPics/Yeezy/Thousand-Lakes-Store-yeezy-slide-pure-1_bc870362-db5c-4b0f-b343-6d40655202bc.webp,,299.99,Yeezy

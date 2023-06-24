@@ -2,7 +2,6 @@ const sql = require("../db/db");
 const path = require('path');
 const csv=require('csvtojson');
 
-
 // const createNewUser = (req,res) => {
 //     if (!req.body){
 //         res.status(400).send({message:"form cant be empty"});
@@ -176,7 +175,7 @@ const showProducts = (req, res) => {
     sql.query(q6, (err, sqlres) => {
         if (err) {
             console.log("error in q2:", err);
-            res.status(400).send({ message: "Can't show all users" });
+            res.status(400).send({ message: "Can't show all the Products" });
             return;
         }
         res.send(sqlres);

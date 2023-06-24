@@ -1,12 +1,4 @@
 const sql = require('./db');
-// const CreateTable = (req,res)=>{
-//   const q3 = 'CREATE TABLE IF NOT EXISTS users (email varchar(255) NOT NULL, psw int, name VARCHAR(255), phone int(255))';
-//   sql.query(q3, (err, mysqlres)=>{
-//       if (err) throw err;
-//       res.send("Table created:")
-//     });
-// };
-
 const createTables = (req, res, next) => {  // function for create all the tables
     const q1 = `
     CREATE TABLE IF NOT EXISTS users (  
@@ -43,8 +35,6 @@ const createTables = (req, res, next) => {  // function for create all the table
   INDEX idx_productId (productId)
     )`;
 
-
-
     const q4 = `
 CREATE TABLE IF NOT EXISTS cart (
   cartId INT NOT NULL AUTO_INCREMENT,
@@ -57,8 +47,6 @@ CREATE TABLE IF NOT EXISTS cart (
   INDEX fk_userEmail_idx (userEmail)
 )`;
 
-
-
     sql.query(q1, (err, mysqlres) => {
         if (err) {
             throw err;
@@ -69,33 +57,27 @@ CREATE TABLE IF NOT EXISTS cart (
                 throw err;
             }
 
-            sql.query(q3, (err, mysqlres) => {
-                if (err) {
-                    throw err;
-                }
-
-                sql.query(q4, (err, mysqlres) => {
-                    if (err) {
-                        throw err;
-                    }
-
-            res.send("Tables created: users, orders,products,cart");
+        sql.query(q3, (err, mysqlres) => {
+            if (err) {
+                throw err;
+            }
+        sql.query(q4, (err, mysqlres) => {
+            if (err) {
+                throw err;
+            }
+    res.send("Tables created: users, orders, products, cart");
         });
      });
 });
     });
 };
 
-
     const dropTables = (req, res, next) => {
 
          const q4 = `DROP TABLE IF EXISTS cart`;
           const q3 = `DROP TABLE IF EXISTS products`;
-        const q2 = `
-                     DROP TABLE IF EXISTS orders`;
+        const q2 = `DROP TABLE IF EXISTS orders`;
         const q1 = `DROP TABLE IF EXISTS users`;
-
-
 
         sql.query(q4, (err, mysqlres) => {
             if (err) {
@@ -116,14 +98,11 @@ CREATE TABLE IF NOT EXISTS cart (
             if (err) {
                 throw err;
             }
-
-
-                res.send("Tables dropped: users, orders,products, cart");
+        res.send("Tables dropped: users, orders,products, cart");
                     });
                 });
              });
         });
     };
-
 
 module.exports={createTables,dropTables};
