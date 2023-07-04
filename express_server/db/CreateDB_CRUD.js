@@ -1,5 +1,5 @@
 const sql = require('./db');
-const createTables = (req, res, next) => {  // function for create all the tables
+const createTables = (req, res, next) => {  // Function for create all the tables
     const q1 = `
     CREATE TABLE IF NOT EXISTS users (  
       email varchar(255) NOT NULL,
