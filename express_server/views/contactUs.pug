@@ -1,20 +1,7 @@
-doctype html
-html(lang="en")
-    head
-        link(rel= "stylesheet" href ="style.css")
-        script(defer src ="script.js")
-        meta(charset="UTF-8")
-        title Title
-    body
-        header Contact Us
-        nav
-            a.homeBtn(href='/homePage') Home
-            a(href='/products') Products
-            a(href='/myCart') My Cart
-            a(href='/myOrder') My Orders
-            #loggedInUserContainer
-                #loggedInUserName
-                a#logoutLink(href='/signIn', style='color: red') Logout
+extends layout
+
+block content
+    header Contact Us
         .content
             form#contact(action='mailto:eyalark@post.bgu.ac.il', enctype='text/plain', method='GET', target='_blank')
                 label.form-label(for='subject') Subject
@@ -22,7 +9,3 @@ html(lang="en")
                 label.form-label(for='c2') Content
                 textarea#c2.form-control(name='body', rows='5')
                 button#submit(type='submit') Submit
-        footer
-            a(href='/aboutUs') About Us
-            a(href='/contactUs') Contact Us
-            p &copy; "EA"Sneakers Website All rights reserved

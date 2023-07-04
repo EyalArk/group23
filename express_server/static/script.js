@@ -1,31 +1,10 @@
-//function for showing the name of the user in the nav
-// function  navUserName (){
-//     document.addEventListener("DOMContentLoaded", function() {
-//
-//    //     const loggedInUser = localStorage.getItem("loggedInName");
-//
-//         const loginEmail = (req, res) => {
-//             const loggedInUser = req.cookies.email;
-//             const loggedInName = req.cookies.name;
-//
-//
-//             // if (loggedInUser) {
-//             //     const loggedInUserName = document.getElementById("loggedInUserName");
-//             //     loggedInUserName.textContent = "Welcome, " + loggedInUserName;
-//             //     console.log(loggedInUserName)
-//             // }
-//
-//                 const loggedInUserName = document.getElementById("loggedInUserName");
-//                 loggedInUserName.textContent = "Welcome, " + loggedInName;
-//                 console.log(loggedInUserName)
-//
-//         };
-//
-//
-//
-//
-//     });
-// }
-//
-// navUserName();
 
+
+// Function to handle the Add To Cartzz button click
+function handleAddToCart(productId) {
+    // Save the product ID in a cookie
+    document.cookie = "productId" + "=" + productId;
+
+    // Optionally, you can show a confirmation message to the user
+    alert("Product added to cart!");
+}
