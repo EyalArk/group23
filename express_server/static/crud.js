@@ -5,7 +5,7 @@ const csv=require('csvtojson');
 
 const createNewUser = (req, res) => { //Create new user function
     if (!req.body) {
-        res.status(400).send({ message: "Form cant be empty" });
+        res.status(400).send({ message: "Form can't be empty" });
         return;
     }
     const newUser = {
@@ -17,12 +17,14 @@ const createNewUser = (req, res) => { //Create new user function
     const checkExistingUserQuery = "SELECT * FROM users WHERE email = ?"; //check if user exsits
     sql.query(checkExistingUserQuery, newUser.email, (err, result) => {
         if (err) {
-            console.log("Error checking existing user:", err);
             res.status(500).send({ message: "An error occurred, please try again" });
             return;
         }
-        if (result.length > 0) {
-            res.status(400).send({ message: "Email already exists" });
+        if (result.length > 0) { //check for email failed already have in the database
+            res.send(`<script> alert('Email already in use, Please try a different Email');
+                    window.location.href = '/SignUp';
+                </script>
+            `);
             return;
         }
         const createUserQuery = "INSERT INTO users SET ?";
@@ -34,7 +36,7 @@ const createNewUser = (req, res) => { //Create new user function
                     .send({ message: "New user signup failed, please try again" });
                 return;
             }
-            console.log("Created new user:");
+            console.log("Created new user:"); //creating new user cookies
             res.cookie("email", req.body.email);
             res.cookie("psw", req.body.psw);
             res.cookie("name", req.body.name);
@@ -47,7 +49,7 @@ const createNewUser = (req, res) => { //Create new user function
 const userLogin = (req, res) => {  //function for users login
     const { loginEmail, loginPsw } = req.body;
     const q3 = "SELECT * FROM users WHERE email = ? AND psw = ?";
-    res.cookie("email", loginEmail);
+    res.cookie("email", loginEmail); //save cookies
     res.cookie("psw", loginPsw);
     let a = loginEmail;
     let b = loginPsw;
@@ -63,21 +65,19 @@ const userLogin = (req, res) => {  //function for users login
             res.cookie("phone", user.phone);
             res.send(`<script> window.location.href = '/homepage'; </script> `);
         } else {
-            res.send(`<script> alert('Login Failed! Please Try again');
+            res.send(`<script> alert('Login Failed! Please Try again'); //pop message for failed login
                     window.location.href = '/SignIn';
                 </script>
-            `);        }
-    });
-}
+            `);}
+    });}
 
-const showUsers = (req, res) => {
+const showUsers = (req, res) => { //function to show all the users in the database
     const q2 = "SELECT * FROM users";
     sql.query(q2, (err, sqlres) => {
         if (err) {
             console.log("error in q2:", err);
             res.status(400).send({ message: "Can't show all users" });
-            return;
-        }
+            return;}
         res.send(sqlres);
         return;
     });
@@ -94,32 +94,31 @@ const InsertDataToUsers = (req,res)=>{
                     if (err) {
                         console.log("error in inserting data", err);
                     }
-                    console.log("creared row sucssesfuly");
+                    console.log("created row in DB");
                 });
             });
         })
     res.send("data read")
 };
 
-const InsertDataToProducts = (req,res)=>{
+const InsertDataToProducts = (req,res)=>{ //function to add the data into products table
     const Q5 = "INSERT INTO products SET ?";
     const csvFilePath= path.join(__dirname, "../content/products.csv");
     console.log("CSV File Path:", csvFilePath);
-    csv().fromFile(csvFilePath)
-        .then((jsonObj)=>{
+    csv().fromFile(csvFilePath).then((jsonObj)=>{
             jsonObj.forEach(element => {
                 sql.query(Q5, element, (err,mysqlres)=>{
                     if (err) {
                         console.log("error in inserting data", err);
                     }
-                    console.log("creared row sucssesfuly");
+                    console.log("created row in DB");
                 });
             });
         })
     res.send("data read")
 };
 
-const InsertDataToOrders = (req,res)=>{
+const InsertDataToOrders = (req,res)=>{ //function to add the data into orders table
     const Q1 = "INSERT INTO orders SET ?";
     const csvFilePath= path.join(__dirname, "../content/orders.csv");
     console.log("CSV File Path:", csvFilePath);
@@ -130,38 +129,26 @@ const InsertDataToOrders = (req,res)=>{
                     if (err) {
                         console.log("error in inserting data", err);
                     }
-                    console.log("creared row sucssesfuly");
+                    console.log("created row in DB");
                 });
             });
         })
     res.send("data read")
 };
 
-const addToCart = (req, res, next) => {
+const addToCart = (req, res, next) => {  //function to add products to the cart
     const userEmail = req.cookies.email;
     const productId = req.params.productId;
-
     res.cookie('productId', productId);
-
-    const selectCartQuery = `
-    SELECT quantity
-    FROM cart
-    WHERE userEmail = ? AND productId = ?
-  `;
+    const selectCartQuery = `SELECT quantity FROM cart WHERE userEmail = ? AND productId = ?`;
     sql.query(selectCartQuery, [userEmail, productId], (err, result) => {
         if (err) {
             console.error('Error retrieving cart:', err);
             res.status(500).send('Error retrieving cart');
             return;
         }
-        if (result.length > 0) {
-            // if the product already exists in cart,so update the quantity
-            const updateCartQuery = `
-        UPDATE cart
-        SET quantity = quantity + 1
-        WHERE userEmail = ? AND productId = ?
-      `;
-
+        if (result.length > 0) { //update quantity if product is already in the cart
+            const updateCartQuery = `UPDATE cart SET quantity = quantity + 1 WHERE userEmail = ? AND productId = ?`;
             sql.query(updateCartQuery, [userEmail, productId], (err, result) => {
                 if (err) {
                     console.error('Error updating cart:', err);
@@ -173,11 +160,7 @@ const addToCart = (req, res, next) => {
             });
         } else {
             // The product is not in the cart, add it
-            const addToCartQuery = `
-        INSERT INTO cart (userEmail, productId)
-        VALUES (?, ?)
-      `;
-
+            const addToCartQuery = `INSERT INTO cart (userEmail, productId) VALUES (?, ?)`;
             sql.query(addToCartQuery, [userEmail, productId], (err, result) => {
                 if (err) {
                     console.error('Error adding product to cart:', err);
@@ -193,7 +176,7 @@ const addToCart = (req, res, next) => {
     });
 };
 
-const removeFromCart = (req, res) => {
+const removeFromCart = (req, res) => { //function to remove products from the cart
     const cartId = req.params.cartId;
     const selectCartQuery = `SELECT quantity FROM cart WHERE cartId = ?`;
     sql.query(selectCartQuery, [cartId], (err, result) => {
@@ -238,7 +221,7 @@ const removeFromCart = (req, res) => {
     });
 };
 
-const addOrder = (req, res) => {
+const addOrder = (req, res) => { //function to add orders to orders table and DB
     const userEmail = req.cookies.email;
     const calculateTotalPriceQuery = `SELECT SUM(p.price * c.quantity) AS total FROM cart c JOIN products p ON c.productId = p.productId WHERE c.userEmail = ?`;
     console.log('Before executing calculateTotalPriceQuery');
@@ -258,34 +241,23 @@ const addOrder = (req, res) => {
                 res.status(500).send('Error adding order');
                 return;
             }
-            // Clear the cart for the user
             const clearCartQuery = `DELETE FROM cart WHERE userEmail = ? `;
-
             sql.query(clearCartQuery, [userEmail], (err, result) => {
-
                 if (err) {
                     console.error('Error clearing cart:', err);
                     res.status(500).send('Error clearing cart');
                     return;
                 }
-
                 console.log('Order added successfully');
                 res.redirect('/myOrder');
             });
         });
     });
 };
-
-const clearCart = (req,res) => {
+const clearCart = (req,res) => { //function to clear all products from the cart
     const userEmail = req.cookies.email;
-
-    const clearCartQuery = `
-        DELETE FROM cart
-        WHERE userEmail = ?
-      `;
-
+    const clearCartQuery = `DELETE FROM cart WHERE userEmail = ?`;
     sql.query(clearCartQuery, [userEmail], (err, result) => {
-
         if (err) {
             console.error('Error clearing cart:', err);
             res.status(500).send('Error clearing cart');
@@ -297,19 +269,12 @@ const clearCart = (req,res) => {
 
 }
 
-const searchProduct = (req, res) => {
+const searchProduct = (req, res) => { //function to search products in search bar - by name
     const searchQuery = req.query.search; // Get the search query from the URL parameter
-
-    // Check if the search query is provided
     if (searchQuery) {
-        // Save the search query in a cookie
         res.cookie('searchQuery', searchQuery, { maxAge: 86400000 }); // Cookie expires after 24 hours
-
-        // Construct the SQL query to search for products by name
         const query = `SELECT * FROM products WHERE name LIKE '%${searchQuery}%'`;
-        console.log('Executing search query:', query); // Add console log message
-
-        // Execute the query and render the results
+        console.log('Executing search query:', query);
         sql.query(query, (err, results) => {
             if (err) {
                 console.error('Error retrieving products:', err);
@@ -319,9 +284,7 @@ const searchProduct = (req, res) => {
             res.render('products', { products: results });
         });
     } else {
-        // If no search query is provided, render the products page without any filtering
         const query = 'SELECT * FROM products';
-
         sql.query(query, (err, results) => {
             if (err) {
                 console.error('Error retrieving products:', err);
@@ -333,7 +296,7 @@ const searchProduct = (req, res) => {
     }
 };
 
-const filterNike = (req, res) => {
+const filterNike = (req, res) => { //function to filter products by brand
     const query = "SELECT * FROM products WHERE brand = 'Nike' ";
     sql.query(query, (err, results) => {
         if (err) {
@@ -372,19 +335,17 @@ const filterYeezy = (req, res) => {
     });
 };
 
-const showAll = (req, res) => {
+const showAll = (req, res) => { //function to show all the products in the DB
     const query = "SELECT * FROM products ";
     sql.query(query, (err, results) => {
         if (err) {
             console.log("error in q2:", err);
             res.status(400).send({ message: "Can't show all users" });
-            return;
-        }
+            return; }
         res.render('products', { products: results });
         return;
     });
 };
-
 
 const displayUserOrders= (req,res) =>{
     const userEmail = req.cookies.email;
