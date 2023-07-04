@@ -22,7 +22,7 @@ const createTables = (req, res, next) => {  // function for create all the table
 
     const q3 = `
     CREATE TABLE IF NOT EXISTS products (
-  productId VARCHAR(255) NOT NULL,
+  productId int NOT NULL,
   name VARCHAR(255),
   fit VARCHAR(255),
   color1 VARCHAR(255),
@@ -39,7 +39,7 @@ const createTables = (req, res, next) => {  // function for create all the table
 CREATE TABLE IF NOT EXISTS cart (
   cartId INT NOT NULL AUTO_INCREMENT,
   userEmail VARCHAR(255),
-  productId VARCHAR(255),
+  productId INT,
   quantity INT DEFAULT 1,
   PRIMARY KEY (cartId),
   FOREIGN KEY (userEmail) REFERENCES users(email),
