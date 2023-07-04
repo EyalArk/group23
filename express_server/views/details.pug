@@ -1,20 +1,5 @@
-doctype html
-html(lang='en')
-    head
-        script(src='products.js')
-        meta(charset='UTF-8')
-        meta(name='description', content='This is my website')
-        title Title
-        link(rel='stylesheet', href='style.css')
-    body
-        nav
-            a.homeBtn(href='/homePage') Home
-            a(href='/products') Products
-            a(href='/myCart') My Cart
-            a(href='/myOrder') My Orders
-            #loggedInUserContainer
-                #loggedInUserName
-                a#logoutLink(href='/signIn', style='color: red') Logout
+extends layout
+block content
         header
             label  More details
         .flex-container
@@ -49,7 +34,3 @@ html(lang='en')
                         br
                         a#BackClick(onclick='history.back()') Back
         div
-        footer
-            a(href='/aboutUs') About Us
-            a(href='/contactUs') Contact Us
-            p  &copy; &quot;EA&quot; Sneakers Website All rights reserved

@@ -8,13 +8,15 @@ html(lang="en")
         title Title
     body
         nav
-            a.homeBtn(href='/homePage') Home
-            a(href='/products') Products
-            a(href='/myCart') My Cart
-            a(href='/myOrder') My Orders
-            #loggedInUserContainer
-                #loggedInUserName
-                a#logoutLink(href='/signIn', style='color: red') Logout
+            a.homeBtn(href="/homePage") Home
+            a(href="/products") Products
+            a(href="/myCart") My Cart
+            a(href="/myOrder") My Orders
+            div#loggedInUserContainer
+                div#loggedInUserName
+                    | Welcome #{loggedInUserName}
+                a#logoutLink(href="/signIn", style="color: red") Logout
+            img#clockImg(src="pics/clockPics/sun.png", alt="Avatar", style="width:38px;height:35px;")
         block content
         footer
             a(href='/aboutUs') About Us
