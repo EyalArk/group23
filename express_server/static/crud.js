@@ -71,17 +71,6 @@ const userLogin = (req, res) => {  //function for users login
             `);}
     });}
 
-const showUsers = (req, res) => { //function to show all the users in the database
-    const q2 = "SELECT * FROM users";
-    sql.query(q2, (err, sqlres) => {
-        if (err) {
-            console.log("error in q2:", err);
-            res.status(400).send({ message: "Can't show all users" });
-            return;}
-        res.send(sqlres);
-        return;
-    });
-};
 
 const InsertDataToUsers = (req,res)=>{
     const Q1 = "INSERT INTO users SET ?";
@@ -266,7 +255,6 @@ const clearCart = (req,res) => { //function to clear all products from the cart
         console.log("Succses cleaning cart")
     });
     res.redirect('/myCart');
-
 }
 
 const searchProduct = (req, res) => { //function to search products in search bar - by name
@@ -350,7 +338,6 @@ const showAll = (req, res) => { //function to show all the products in the DB
 const displayUserOrders= (req,res) =>{
     const userEmail = req.cookies.email;
     const query = 'SELECT * FROM orders WHERE userEmail = ?';
-
     sql.query(query, [userEmail], (err, results) => {
         if (err) {
             console.error('Error retrieving orders:', err);
@@ -400,7 +387,8 @@ const displayUsers = (req,res) => {
     });
 }
 
-module.exports = {createNewUser,userLogin, showUsers,InsertDataToUsers,displayUsers,
+
+module.exports = {createNewUser,userLogin,InsertDataToUsers,displayUsers,
      InsertDataToProducts,displayProducts, InsertDataToOrders,displayUserOrders,
     addToCart , searchProduct, filterNike,filterNewBalance,filterYeezy, showAll,
     removeFromCart, addOrder, clearCart, displayCart};

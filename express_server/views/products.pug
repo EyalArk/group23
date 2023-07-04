@@ -1,29 +1,30 @@
 extends layout
-block content
-        header Products
-        form#searchForm.content(action="/products55", method="get")
-            input#search(type='text', placeholder='Search..', name='search' )
-        #filtersButtons.container
-            button.btnFilter(onclick="location.href='/All'")  Show all
-            button.btnFilter(id="btnNike" onclick="location.href='/Nike'") Nike
-            button.btnFilter(onclick="location.href='/NewBalance'") New Balance
-            button.btnFilter(onclick="location.href='/Yeezy'")  Yeezy
 
-        .table-container
-            table
-                tr
-                    each product in products
-                        tr
-                            td= product.name
-                            td= product.fit
-                            td
-                                .image-container
-                                    img.image1(src=product.image1)
-                                    img.image2(src=product.image2)
-                            td= product.price
-                            td
-                                .filtersButtons
-                                    #btnDetails1
-                                        button.button1(onclick="ViewMore()") Details
-                                    #btnDetails2
-                                        button.button2(onclick=`console.log('${product.productId}'); location.href = '/addToCart/' + ${product.productId}`) Add To Cart
+block content
+    header Products
+    form#searchForm.content(action="/products55", method="get")
+        input#search(type='text', placeholder='Search..', name='search')
+    #filtersButtons.container
+        button.btnFilter(onclick="location.href='/All'") Show all
+        button.btnFilter(id="btnNike" onclick="location.href='/Nike'") Nike
+        button.btnFilter(onclick="location.href='/NewBalance'") New Balance
+        button.btnFilter(onclick="location.href='/Yeezy'") Yeezy
+
+    .table-container
+        table
+            tr
+                each product in products
+                    tr
+                        td= product.name
+                        td= product.fit
+                        td
+                            .image-container
+                                img.image1(src=product.image1)
+                                img.image2(src=product.image2)
+                        td= product.price
+                        td
+                            .filtersButtons
+                                #btnDetails1
+                                    button.button1(onclick=`location.href='/details/${product.productId}'`) Details
+                                #btnDetails2
+                                    button.button2(onclick=`console.log('${product.productId}'); location.href = '/addToCart/' + ${product.productId}`) Add To Cart

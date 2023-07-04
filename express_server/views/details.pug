@@ -1,36 +1,36 @@
 extends layout
+
 block content
-        header
-            label  More details
-        .flex-container
-            .content
-                .flex-column
-                    h2#productName
-                    #images
-                        img#image1(src='', alt='Image 1', height='350', width='500px')
-                        img#image2(src='', alt='Image 2', height='350', width='500px')
-                    p#details
-                        label
-                            | Product ID:
-                            span#productID
-                        br
-                        label
-                            | Brand:
-                            span#brand
-                        br
-                        label
-                            | Fit:
-                            span#fit
-                        br
-                        label
-                            | Colors:
-                            span#colors
-                        br
-                        label
-                            | Price:
-                            span#price
-                        br
-                        br
-                        br
-                        a#BackClick(onclick='history.back()') Back
-        div
+    header
+        label More details
+    .flex-container
+        .content
+            .flex-column
+                h2#productName
+                #images
+                    img#image1(src='', alt='Image 1', height='350', width='500px')
+                    img#image2(src='', alt='Image 2', height='350', width='500px')
+                p#details
+                    label
+                        | Product ID:
+                        span#productID
+                    br
+                    label
+                        | Brand:
+                        span#brand
+                    br
+                    label
+                        | Fit:
+                        span#fit
+                    br
+                    label
+                        | Colors:
+                        span#colors
+                    br
+                    label
+                        | Price:
+                        span#price
+                    br
+                    br
+                    br
+                    a#BackClick(onclick='history.back()') Back
