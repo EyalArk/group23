@@ -6,11 +6,8 @@ block content
             th Order
             th date
             th totalPrice
-            th userEmail
         each order, index in orders
             tr
-                //td= order.orderId
                 td= index+1
-                td= (order.date)
+                td= order.date.toISOString().split('T')[0]
                 td= order.totalPrice
-                td= order.userEmail

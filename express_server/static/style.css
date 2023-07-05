@@ -446,7 +446,7 @@ input, textarea {
     font-size: 30px;
 }
 
-.btnFilter, .btnDetails, .remove-btn, #clear-all-btn, #buy-now-btn, #BackClick,#btnDetails1,#btnDetails2 {
+.btn-remove-item, .filtersButtons ,.btnFilter, .btnDetails, .remove-btn, #clear-all-btn, #buy-now-btn, #BackClick{
     background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
     border: 0;
     border-radius: 6px;
@@ -582,4 +582,10 @@ input, textarea {
 .container {
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 768px) {
+    #loggedInUserContainer {
+        display: none;
+    }
 }

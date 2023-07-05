@@ -14,7 +14,7 @@ html(lang="en")
             a(href="/myOrder") My Orders
             div#loggedInUserContainer
                 div#loggedInUserName
-                    | Welcome #{loggedInUserName}
+                    | Logged in as #{loggedInUserName}
                 a#logoutLink(href="/signIn", style="color: red") Logout
             img#clockImg(src="pics/clockPics/sun.png", alt="Avatar", style="width:38px;height:35px;")
         block content

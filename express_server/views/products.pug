@@ -2,7 +2,7 @@ extends layout
 
 block content
     header Products
-    form#searchForm.content(action="/products55", method="get")
+    form#searchForm(action="/products55", method="get")
         input#search(type='text', placeholder='Search..', name='search')
     #filtersButtons.container
         button.btnFilter(onclick="location.href='/All'") Show all
@@ -23,8 +23,5 @@ block content
                                 img.image2(src=product.image2)
                         td= product.price
                         td
-                            .filtersButtons
-                                #btnDetails1
-                                    button.button1(onclick=`location.href='/details/${product.productId}'`) Details
-                                #btnDetails2
-                                    button.button2(onclick=`console.log('${product.productId}'); location.href = '/addToCart/' + ${product.productId}`) Add To Cart
+                            #btnDetails1
+                                button.filtersButtons(onclick=`console.log('${product.productId}'); location.href = '/addToCart/' + ${product.productId}`) Add To Cart

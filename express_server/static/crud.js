@@ -71,8 +71,7 @@ const userLogin = (req, res) => {  //function for users login
             `);}
     });}
 
-
-const InsertDataToUsers = (req,res)=>{
+const InsertDataToUsers = (req,res)=>{ //function to insert data into users table in db
     const Q1 = "INSERT INTO users SET ?";
     const csvFilePath= path.join(__dirname, "../content/users.csv");
     console.log("CSV File Path:", csvFilePath);
@@ -210,10 +209,9 @@ const removeFromCart = (req, res) => { //function to remove products from the ca
     });
 };
 
-const addOrder = (req, res) => { //function to add orders to orders table and DB
+const addOrder = (req, res) => {
     const userEmail = req.cookies.email;
     const calculateTotalPriceQuery = `SELECT SUM(p.price * c.quantity) AS total FROM cart c JOIN products p ON c.productId = p.productId WHERE c.userEmail = ?`;
-    console.log('Before executing calculateTotalPriceQuery');
     sql.query(calculateTotalPriceQuery, [userEmail], (err, result) => {
         if (err) {
             console.error('Error calculating total price:', err);
@@ -222,23 +220,25 @@ const addOrder = (req, res) => { //function to add orders to orders table and DB
         }
         const totalPrice = result[0].total;
         console.log('Total Price:', totalPrice);
-        const insertOrderQuery = `INSERT INTO orders (date, totalPrice, userEmail) VALUES (CURDATE(), ?, ?)`;
+        const currentDate1 = new Date().toISOString().split('T')[0];
+        const insertOrderQuery = `INSERT INTO orders (date, totalPrice, userEmail)
+                              VALUES ('${currentDate1}', '${totalPrice}', '${userEmail}')`;
         console.log('Before executing insertOrderQuery');
-        sql.query(insertOrderQuery, [totalPrice, userEmail], (err, result) => {
+        sql.query(insertOrderQuery, (err, result) => {
             if (err) {
                 console.error('Error adding order:', err);
                 res.status(500).send('Error adding order');
                 return;
             }
-            const clearCartQuery = `DELETE FROM cart WHERE userEmail = ? `;
+            const clearCartQuery = `DELETE FROM cart WHERE userEmail = ?`;
             sql.query(clearCartQuery, [userEmail], (err, result) => {
                 if (err) {
                     console.error('Error clearing cart:', err);
                     res.status(500).send('Error clearing cart');
                     return;
                 }
-                console.log('Order added successfully');
-                res.redirect('/myOrder');
+                res.send(`<script> alert('Purchase successful!');
+                  window.location.href = '/myOrder'; </script>`);
             });
         });
     });
@@ -252,7 +252,7 @@ const clearCart = (req,res) => { //function to clear all products from the cart
             res.status(500).send('Error clearing cart');
             return;
         }
-        console.log("Succses cleaning cart")
+        console.log("Success cleaning cart")
     });
     res.redirect('/myCart');
 }
@@ -297,7 +297,7 @@ const filterNike = (req, res) => { //function to filter products by brand
     });
 };
 
-const filterNewBalance = (req, res) => {
+const filterNewBalance = (req, res) => { //function to filter products by brand
     const query = "SELECT * FROM products WHERE brand = 'New Balance' ";
     sql.query(query, (err, results) => {
         if (err) {
@@ -310,7 +310,7 @@ const filterNewBalance = (req, res) => {
     });
 };
 
-const filterYeezy = (req, res) => {
+const filterYeezy = (req, res) => { //function to filter products by brand
     const query = "SELECT * FROM products WHERE brand = 'Yeezy' ";
     sql.query(query, (err, results) => {
         if (err) {
@@ -323,7 +323,7 @@ const filterYeezy = (req, res) => {
     });
 };
 
-const showAll = (req, res) => { //function to show all the products in the DB
+const showAll = (req, res) => { //function to show all the products in the products page by clicking on showall button
     const query = "SELECT * FROM products ";
     sql.query(query, (err, results) => {
         if (err) {
@@ -335,7 +335,7 @@ const showAll = (req, res) => { //function to show all the products in the DB
     });
 };
 
-const displayUserOrders= (req,res) =>{
+const displayUserOrders= (req,res) =>{ //function to show all the users orders in the DB by email
     const userEmail = req.cookies.email;
     const query = 'SELECT * FROM orders WHERE userEmail = ?';
     sql.query(query, [userEmail], (err, results) => {
@@ -348,7 +348,7 @@ const displayUserOrders= (req,res) =>{
     });
 }
 
-const displayProducts = (req,res) =>{
+const displayProducts = (req,res) =>{ //function to show all the products in the DB
     const query = 'SELECT * FROM products';
     sql.query(query, (err, results) => {
         if (err) {
@@ -360,7 +360,7 @@ const displayProducts = (req,res) =>{
     });
 }
 
-const displayCart = (req,res) =>{
+const displayCart = (req,res) =>{ //function to show all the products in the cart
     const query = ' SELECT c.cartId , c.productId ,p.productId ,c.quantity, p.name, p.image1, p.image1, p.price\n' +
         '    FROM cart c\n' +
         '    JOIN products p ON c.productId = p.productId ';
@@ -375,7 +375,7 @@ const displayCart = (req,res) =>{
     });
 }
 
-const displayUsers = (req,res) => {
+const displayUsers = (req,res) => { //function to show all the users in the DB
     const query = 'SELECT * FROM users';
     sql.query(query, (err, results) => {
         if (err) {
@@ -390,6 +390,6 @@ const displayUsers = (req,res) => {
 
 module.exports = {createNewUser,userLogin,InsertDataToUsers,displayUsers,
      InsertDataToProducts,displayProducts, InsertDataToOrders,displayUserOrders,
-    addToCart , searchProduct, filterNike,filterNewBalance,filterYeezy, showAll,
+    addToCart , searchProduct, filterNike,filterNewBalance,filterYeezy,showAll,
     removeFromCart, addOrder, clearCart, displayCart};
 

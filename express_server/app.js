@@ -25,11 +25,14 @@ app.get('/',(req,res) => {
 });
 
 app.get('/aboutUs',(req,res) => {
-    res.render('aboutUs');
+    const loggedInUserName = req.cookies.name
+    res.render('aboutUs',{ loggedInUserName });
 });
 app.get('/contactUs',(req,res) => {
-    res.render('contactUs');
+    const loggedInUserName = req.cookies.name
+    res.render('contactUs',{ loggedInUserName });
 });
+
 app.get('/homePage',(req,res) => {
     const loggedInUserName = req.cookies.name
     res.render('homePage',{ loggedInUserName });
@@ -48,9 +51,14 @@ app.get('/SignOut',(req,res) => {
     res.sendFile(path.join(__dirname,"views/signIn.html"));
 });
 
-app.get('/details',(req,res) => {
-    res.render('details');
-});
+app.get('/myOrder', crud.displayUserOrders)
+app.get('/products', crud.displayProducts)
+app.get('/myCart', crud.displayCart)
+
+// app.get('/products', (req, res) => {
+//     const loggedInUserName = req.cookies.name;
+//     res.render('products', { loggedInUserName });
+// });
 
 
 //create tables in DB
@@ -59,7 +67,7 @@ app.get('/createTables', CreateDB_CRUD.createTables);
 //drop Tables in DB
 app.get('/dropTables', CreateDB_CRUD.dropTables);
 
-//All CRUD and functions in the site - URL for direct access
+//All CRUD and functions in the site - Links for direct access to each function
 app.post('/UserSignUp', crud.createNewUser);
 app.post('/signInUser',crud.userLogin);
 app.get('/InsertDataToUsers',crud.InsertDataToUsers);
@@ -68,9 +76,6 @@ app.get('/InsertDataToProducts',crud.InsertDataToProducts);
 app.get('/addToCart/:productId', crud.addToCart);
 app.get('/addOrder', crud.addOrder)
 app.get('/users2', crud.displayUsers)
-app.get('/myOrder', crud.displayUserOrders)
-app.get('/products', crud.displayProducts)
-app.get('/myCart', crud.displayCart)
 app.get('/products55', crud.searchProduct)
 app.get('/Nike', crud.filterNike)
 app.get('/NewBalance', crud.filterNewBalance)
