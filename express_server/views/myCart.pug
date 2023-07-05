@@ -13,7 +13,6 @@ block content
                 tr
                     th Name
                     th Quantity
-                    th
                     th Price
                     th total price
 
@@ -21,14 +20,12 @@ block content
                     tr
                         td= c.name
                         td= c.quantity
+                        td= c.price
+                        -var totalPriceProducts = (c.price * c.quantity).toFixed(2)
+                        td= totalPriceProducts
                         td
                             .image-container
                             img.image1(src=c.image1)
                             img.image2(src=c.image2)
-
-                        td= c.price
                         td
-
                             button.btn-remove-item(onclick=`console.log('${c.cartId}'); location.href = '/removeFromCart/' + ${c.cartId}`) Remove
-                        -var totalPriceProducts = (c.price * c.quantity).toFixed(2)
-                        td= totalPriceProducts

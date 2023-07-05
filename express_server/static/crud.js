@@ -2,7 +2,6 @@ const sql = require("../db/db");
 const path = require('path');
 const csv=require('csvtojson');
 
-
 const createNewUser = (req, res) => { //Create new user function
     if (!req.body) {
         res.status(400).send({ message: "Form can't be empty" });
