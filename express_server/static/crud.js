@@ -144,7 +144,11 @@ const addToCart = (req, res, next) => {  //function to add products to the cart
                     return;
                 }
                 console.log('Product quantity updated in cart successfully');
-                res.redirect('/products');
+                // res.redirect('/products');
+                res.send(`<script> alert('Product Added To Cart!');
+                window.location.href = '/products'; </script>`);
+
+
             });
         } else {
             // The product is not in the cart, add it
@@ -158,7 +162,9 @@ const addToCart = (req, res, next) => {  //function to add products to the cart
                 res.send(`<script> alert('Product Added To Cart!');
                     window.location.href = '/products';
                 </script>
+                
             `);
+
             });
         }
     });
@@ -209,7 +215,7 @@ const removeFromCart = (req, res) => { //function to remove products from the ca
     });
 };
 
-const addOrder = (req, res) => {
+const addOrder = (req, res) => {   // function to add order to Orders table
     const userEmail = req.cookies.email;
     const calculateTotalPriceQuery = `SELECT SUM(p.price * c.quantity) AS total FROM cart c JOIN products p ON c.productId = p.productId WHERE c.userEmail = ?`;
     sql.query(calculateTotalPriceQuery, [userEmail], (err, result) => {
@@ -223,7 +229,6 @@ const addOrder = (req, res) => {
         const currentDate1 = new Date().toISOString().split('T')[0];
         const insertOrderQuery = `INSERT INTO orders (date, totalPrice, userEmail)
                               VALUES ('${currentDate1}', '${totalPrice}', '${userEmail}')`;
-        console.log('Before executing insertOrderQuery');
         sql.query(insertOrderQuery, (err, result) => {
             if (err) {
                 console.error('Error adding order:', err);
@@ -237,12 +242,15 @@ const addOrder = (req, res) => {
                     res.status(500).send('Error clearing cart');
                     return;
                 }
+
                 res.send(`<script> alert('Purchase successful!');
-                  window.location.href = '/myOrder'; </script>`);
+                 window.location.href = '/myOrder';  </script>`);
+
             });
         });
     });
 };
+
 const clearCart = (req,res) => { //function to clear all products from the cart
     const userEmail = req.cookies.email;
     const clearCartQuery = `DELETE FROM cart WHERE userEmail = ?`;
@@ -288,7 +296,7 @@ const filterNike = (req, res) => { //function to filter products by brand
     const query = "SELECT * FROM products WHERE brand = 'Nike' ";
     sql.query(query, (err, results) => {
         if (err) {
-            console.log("error in q2:", err);
+            console.log("error in query:", err);
             res.status(400).send({ message: "Can't show all users" });
             return;
         }
@@ -301,7 +309,7 @@ const filterNewBalance = (req, res) => { //function to filter products by brand
     const query = "SELECT * FROM products WHERE brand = 'New Balance' ";
     sql.query(query, (err, results) => {
         if (err) {
-            console.log("error in q2:", err);
+            console.log("error in query:", err);
             res.status(400).send({ message: "Can't show all users" });
             return;
         }
@@ -314,7 +322,7 @@ const filterYeezy = (req, res) => { //function to filter products by brand
     const query = "SELECT * FROM products WHERE brand = 'Yeezy' ";
     sql.query(query, (err, results) => {
         if (err) {
-            console.log("error in q2:", err);
+            console.log("error in query:", err);
             res.status(400).send({ message: "Can't show all users" });
             return;
         }
@@ -327,7 +335,7 @@ const showAll = (req, res) => { //function to show all the products in the produ
     const query = "SELECT * FROM products ";
     sql.query(query, (err, results) => {
         if (err) {
-            console.log("error in q2:", err);
+            console.log("error in query:", err);
             res.status(400).send({ message: "Can't show all users" });
             return; }
         res.render('products', { products: results });
@@ -336,6 +344,7 @@ const showAll = (req, res) => { //function to show all the products in the produ
 };
 
 const displayUserOrders= (req,res) =>{ //function to show all the users orders in the DB by email
+    const loggedInUserName = req.cookies.name
     const userEmail = req.cookies.email;
     const query = 'SELECT * FROM orders WHERE userEmail = ?';
     sql.query(query, [userEmail], (err, results) => {
@@ -344,11 +353,12 @@ const displayUserOrders= (req,res) =>{ //function to show all the users orders i
             res.status(500).send('An error occurred while retrieving orders');
             return;
         }
-        res.render('myOrder', { orders: results });
+        res.render('myOrder', { orders: results,loggedInUserName });
     });
 }
 
 const displayProducts = (req,res) =>{ //function to show all the products in the DB
+    const loggedInUserName = req.cookies.name
     const query = 'SELECT * FROM products';
     sql.query(query, (err, results) => {
         if (err) {
@@ -356,11 +366,12 @@ const displayProducts = (req,res) =>{ //function to show all the products in the
             res.status(500).send('An error occurred while retrieving products');
             return;
         }
-        res.render('products', { products: results });
+        res.render('products', { products: results , loggedInUserName});
     });
 }
 
 const displayCart = (req,res) =>{ //function to show all the products in the cart
+    const loggedInUserName = req.cookies.name
     const query = ' SELECT c.cartId , c.productId ,p.productId ,c.quantity, p.name, p.image1, p.image1, p.price\n' +
         '    FROM cart c\n' +
         '    JOIN products p ON c.productId = p.productId ';
@@ -371,7 +382,7 @@ const displayCart = (req,res) =>{ //function to show all the products in the car
             res.status(500).send('An error occurred while retrieving myCart');
             return;
         }
-        res.render('myCart', { cart: results });
+        res.render('myCart', { cart: results ,loggedInUserName});
     });
 }
 

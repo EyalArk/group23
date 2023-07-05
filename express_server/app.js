@@ -55,11 +55,6 @@ app.get('/myOrder', crud.displayUserOrders)
 app.get('/products', crud.displayProducts)
 app.get('/myCart', crud.displayCart)
 
-// app.get('/products', (req, res) => {
-//     const loggedInUserName = req.cookies.name;
-//     res.render('products', { loggedInUserName });
-// });
-
 
 //create tables in DB
 app.get('/createTables', CreateDB_CRUD.createTables);
