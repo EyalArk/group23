@@ -1,0 +1,150 @@
+*please follow the instructions on the readme file for CRUD!
+
+
+app.js: 
+const express = require('express');
+const app = express();
+const path = require('path');
+const crud = require("../express_server/static/crud");
+const port = 3000;
+const BodyParser = require("body-parser");
+app.use(BodyParser.json());
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname,"static")));
+app.use(BodyParser.urlencoded({extended:true}));
+app.set('views',path.join(__dirname,'views'));
+app.set('view engine','pug');
+const sql = require('../express_server/db/db');
+const CreateDB_CRUD = require('./db/CreateDB_CRUD');
+const csv = require('csvtojson');
+
+createDB_CRUD.js:
+const sql = require('./db');
+
+db.js: 
+const mysql = require("mysql2");
+const dbConfig = require("./db.config");
+
+crud.js: 
+const sql = require("../db/db");
+const path = require('path');
+const csv=require('csvtojson');
+
+
+create tables: 
+const createTables = (req, res, next) => {  // Function that creates all the tables
+    const q1 = `
+    CREATE TABLE IF NOT EXISTS users (  
+      email varchar(255) NOT NULL,
+      psw int(8),
+      name VARCHAR(255),
+      phone VARCHAR(255),
+       PRIMARY KEY (email)
+
+    )`;
+
+    const q2 = `
+    CREATE TABLE IF NOT EXISTS orders ( 
+      orderId int NOT NULL AUTO_INCREMENT,
+      date DATE,
+      totalPrice decimal(10, 2),
+      userEmail varchar(255),
+     PRIMARY KEY (orderId, userEmail),
+        FOREIGN KEY (userEmail) REFERENCES users(email) ON DELETE CASCADE
+    )`;
+
+    const q3 = `
+    CREATE TABLE IF NOT EXISTS products (
+  productId VARCHAR(255) NOT NULL,
+  name VARCHAR(255),
+  fit VARCHAR(255),
+  color1 VARCHAR(255),
+  color2 VARCHAR(255),
+  image1 VARCHAR(255),
+  image2 VARCHAR(255),
+  price decimal(10, 2),
+  brand VARCHAR(255),
+  PRIMARY KEY (productId),
+  INDEX idx_productId (productId)
+    )`;
+
+    const q4 = `
+CREATE TABLE IF NOT EXISTS cart (
+  cartId INT NOT NULL AUTO_INCREMENT,
+  userEmail VARCHAR(255),
+  productId VARCHAR(255),
+  quantity INT DEFAULT 1,
+  PRIMARY KEY (cartId),
+  FOREIGN KEY (userEmail) REFERENCES users(email),
+  FOREIGN KEY (productId) REFERENCES products(productId),
+  INDEX fk_userEmail_idx (userEmail)
+)`;
+
+    sql.query(q1, (err, mysqlres) => {
+        if (err) {
+            throw err;
+        }
+
+        sql.query(q2, (err, mysqlres) => {
+            if (err) {
+                throw err;
+            }
+
+        sql.query(q3, (err, mysqlres) => {
+            if (err) {
+                throw err;
+            }
+        sql.query(q4, (err, mysqlres) => {
+            if (err) {
+                throw err;
+            }
+    res.send("Tables created: users, orders, products, cart");
+        });
+     });
+});
+    });
+};
+route: 
+app.get('/createTables', CreateDB_CRUD.createTables);
+
+drop tables:
+   const dropTables = (req, res, next) => { //function that drops all the table
+
+         const q4 = `DROP TABLE IF EXISTS cart`;
+          const q3 = `DROP TABLE IF EXISTS products`;
+        const q2 = `DROP TABLE IF EXISTS orders`;
+        const q1 = `DROP TABLE IF EXISTS users`;
+
+        sql.query(q4, (err, mysqlres) => {
+            if (err) {
+                throw err;
+            }
+
+            sql.query(q3, (err, mysqlres) => {
+            if (err) {
+                throw err;
+            }
+
+        sql.query(q2, (err, mysqlres) => {
+            if (err) {
+                throw err;
+            }
+
+        sql.query(q1, (err, mysqlres) => {
+            if (err) {
+                throw err;
+            }
+        res.send("Tables dropped: users, orders,products, cart");
+                    });
+                });
+             });
+        });
+    };
+
+route: 
+app.get('/dropTables', CreateDB_CRUD.dropTables);
+
+
+
+
