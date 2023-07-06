@@ -1,5 +1,5 @@
 const sql = require('./db');
-const createTables = (req, res, next) => {  // Function for create all the tables
+const createTables = (req, res, next) => {  // Function that creates all the tables
     const q1 = `
     CREATE TABLE IF NOT EXISTS users (  
       email varchar(255) NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS cart (
     });
 };
 
-    const dropTables = (req, res, next) => {
+    const dropTables = (req, res, next) => { //function that drops all the table
 
          const q4 = `DROP TABLE IF EXISTS cart`;
           const q3 = `DROP TABLE IF EXISTS products`;

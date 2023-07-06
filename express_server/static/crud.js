@@ -74,8 +74,7 @@ const InsertDataToUsers = (req,res)=>{ //function to insert data into users tabl
     const Q1 = "INSERT INTO users SET ?";
     const csvFilePath= path.join(__dirname, "../content/users.csv");
     console.log("CSV File Path:", csvFilePath);
-    csv().fromFile(csvFilePath)
-        .then((jsonObj)=>{
+    csv().fromFile(csvFilePath) .then((jsonObj)=>{
             jsonObj.forEach(element => {
                 sql.query(Q1, element, (err,mysqlres)=>{
                     if (err) {
@@ -143,14 +142,10 @@ const addToCart = (req, res, next) => {  //function to add products to the cart
                     return;
                 }
                 console.log('Product quantity updated in cart successfully');
-                // res.redirect('/products');
                 res.send(`<script> alert('Product Added To Cart!');
                 window.location.href = '/products'; </script>`);
-
-
             });
-        } else {
-            // The product is not in the cart, add it
+        } else {      // The product is not in the cart, add it
             const addToCartQuery = `INSERT INTO cart (userEmail, productId) VALUES (?, ?)`;
             sql.query(addToCartQuery, [userEmail, productId], (err, result) => {
                 if (err) {
@@ -160,10 +155,8 @@ const addToCart = (req, res, next) => {  //function to add products to the cart
                 }
                 res.send(`<script> alert('Product Added To Cart!');
                     window.location.href = '/products';
-                </script>
-                
+                </script>         
             `);
-
             });
         }
     });
@@ -241,7 +234,6 @@ const addOrder = (req, res) => {   // function to add order to Orders table
                     res.status(500).send('Error clearing cart');
                     return;
                 }
-
                 res.send(`<script> alert('Purchase successful!');
                  window.location.href = '/myOrder';  </script>`);
 
@@ -397,9 +389,6 @@ const displayUsers = (req,res) => { //function to show all the users in the DB
         res.render('users2', { users: results });
     });
 }
-
-
-
 
 module.exports = {createNewUser,userLogin,InsertDataToUsers,displayUsers,
      InsertDataToProducts,displayProducts, InsertDataToOrders,displayUserOrders,

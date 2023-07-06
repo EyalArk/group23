@@ -62,7 +62,7 @@ app.get('/createTables', CreateDB_CRUD.createTables);
 //drop Tables in DB
 app.get('/dropTables', CreateDB_CRUD.dropTables);
 
-//All CRUD and functions in the site - Links for direct access to each function
+//All CRUD functions on the site - Links for direct access to each function
 app.post('/UserSignUp', crud.createNewUser);
 app.post('/signInUser',crud.userLogin);
 app.get('/InsertDataToUsers',crud.InsertDataToUsers);
