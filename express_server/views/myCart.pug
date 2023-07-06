@@ -17,15 +17,16 @@ block content
                     th total price
 
                 each c in cart
-                    tr
-                        td= c.name
-                        td= c.quantity
-                        td= c.price
-                        -var totalPriceProducts = (c.price * c.quantity).toFixed(2)
-                        td= totalPriceProducts
-                        td
-                            .image-container
-                            img.image1(src=c.image1)
-                            img.image2(src=c.image2)
-                        td
-                            button.btn-remove-item(onclick=`console.log('${c.cartId}'); location.href = '/removeFromCart/' + ${c.cartId}`) Remove
+                    if c.userEmail === emailUser
+                        tr
+                            td= c.name
+                            td= c.quantity
+                            td= c.price
+                            -var totalPriceProducts = (c.price * c.quantity).toFixed(2)
+                            td= totalPriceProducts
+                            td
+                                .image-container
+                                img.image1(src=c.image1)
+                                img.image2(src=c.image2)
+                            td
+                                button.btn-remove-item(onclick=`console.log('${c.cartId}'); location.href = '/removeFromCart/' + ${c.cartId}`) Remove

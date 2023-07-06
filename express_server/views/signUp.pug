@@ -11,16 +11,17 @@ html(lang="en")
             form#details.content(action="/UserSignUp", method="post")
                 label(for="accountEmail")
                     b Email
-                input(type="email", id="accountEmail", name="email", class="input_signUp", required, pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
+                input(type="email", id="accountEmail", name="email" placeholder= "Email...", class="input_signUp", required, pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")
                 label(for="psw")
                     b Password
-                input(type="password", id="psw", name="psw", class="input_signUp", required, minlength="7")
+                input(type="password", id="psw", name="psw" placeholder= "Password...", class="input_signUp", required, minlength="7")
                 label(for="name")
                     b Full Name
-                input(type="text", id="name", name="name", class="input_signUp", required, pattern="[A-Za-z]+[ ][A-Za-z]+")
+                input(type="text", id="name", name="name" placeholder= "First Name+Last Name...", class="input_signUp", required, pattern="[A-Za-z]{2,} [A-Za-z]{2,}")
+
                 label(for="phone")
                     b Phone
-                input(type="tel", id="phone", name="phoneNum", class="input_signUp", required, pattern="[0-9]+")
+                input(type="tel", id="phone", name="phoneNum" placeholder= "Phone Number...", class="input_signUp", required, pattern="[0-9]+")
                 button(type="submit", id="signUp" value="Sign Up") Sign Up
                 div#signInContainer
                     br

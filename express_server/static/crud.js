@@ -370,8 +370,9 @@ const displayProducts = (req,res) =>{ //function to show all the products in the
 }
 
 const displayCart = (req,res) =>{ //function to show all the products in the cart
+    const emailUser = req.cookies.email
     const loggedInUserName = req.cookies.name
-    const query = ' SELECT c.cartId , c.productId ,p.productId ,c.quantity, p.name, p.image1, p.image1, p.price\n' +
+    const query = ' SELECT c.cartId , c.userEmail, c.productId ,p.productId ,c.quantity, p.name, p.image1, p.image1, p.price\n' +
         '    FROM cart c\n' +
         '    JOIN products p ON c.productId = p.productId ';
 
@@ -381,7 +382,7 @@ const displayCart = (req,res) =>{ //function to show all the products in the car
             res.status(500).send('An error occurred while retrieving myCart');
             return;
         }
-        res.render('myCart', { cart: results ,loggedInUserName});
+        res.render('myCart', { cart: results ,loggedInUserName, emailUser});
     });
 }
 
@@ -396,6 +397,8 @@ const displayUsers = (req,res) => { //function to show all the users in the DB
         res.render('users2', { users: results });
     });
 }
+
+
 
 
 module.exports = {createNewUser,userLogin,InsertDataToUsers,displayUsers,
